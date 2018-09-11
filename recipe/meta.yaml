@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.5" %}
-{% set sha256 = "2daedb5258365a9d492e08917bb99ce590dba63f86997cd8e5225b4a58425922" %}
+{% set version = "1.6" %}
+{% set sha256 = "b6d8f15ba1af458f134d67fee11205bb32172b83074bc7769be9b2c17a3748d9" %}
 
 package:
   name: {{ name }}
@@ -54,7 +54,6 @@ test:
     - python/tests/utils.py  # [osx]
     - python/tests/*.py  # [linux]
     - python/tests/data/*
-    - python/examples/materials_library.py
 
 about:
   home: http:/github.com/stevengj/meep
