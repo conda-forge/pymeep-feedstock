@@ -11,9 +11,9 @@ docker_image:
 fortran_compiler:
 - toolchain_fort
 hdf5:
-- 1.10.2
+- 1.10.3
 openblas:
-- 0.2.20
+- 0.3.3
 pin_run_as_build:
   hdf5:
     max_pin: x.x.x
