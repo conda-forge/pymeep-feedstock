@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.5" %}
-{% set sha256 = "2daedb5258365a9d492e08917bb99ce590dba63f86997cd8e5225b4a58425922" %}
+{% set version = "1.7" %}
+{% set sha256 = "92974884abe2f7cb3a9e6d91f14b943482936b7d12013075278e03e5be603c46" %}
 
 package:
   name: {{ name }}
@@ -51,12 +51,10 @@ test:
     - meep
     - meep.mpb
   source_files:
-    - libmeepgeom/cyl-ellipsoid-eps-ref.h5
     - python/tests/bend_flux.py  # [osx]
     - python/tests/utils.py  # [osx]
     - python/tests/*.py  # [linux]
     - python/tests/data/*
-    - python/examples/materials_library.py
 
 about:
   home: http:/github.com/stevengj/meep
