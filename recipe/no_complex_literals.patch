@@ -7,13 +7,13 @@ Complex literals is C++14 and thus fails to build on openSUSE Tumbleweed.
 
 Signed-off-by: Jonathan Brielmaier <jbrielmaier@suse.de>
 ---
- tests/ring-ll.cpp | 3 ++-
+ libmeepgeom/ring-ll.cpp | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/tests/ring-ll.cpp b/tests/ring-ll.cpp
+diff --git a/libmeepgeom/ring-ll.cpp b/libmeepgeom/ring-ll.cpp
 index af4f39a8..3d2b7be3 100644
---- a/tests/ring-ll.cpp
-+++ b/tests/ring-ll.cpp
+--- a/libmeepgeom/ring-ll.cpp
++++ b/libmeepgeom/ring-ll.cpp
 @@ -136,7 +136,8 @@ int main(int argc, char *argv[])
    int ref_bands=3;
    double ref_freq_re[3] = {  1.1807e-01, 1.4716e-01,  1.7525e-01  };
