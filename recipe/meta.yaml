@@ -1,5 +1,5 @@
 {% set name = "pymeep" %}
-{% set version = "1.7" %}
+{% set version = "1.7.0" %}
 {% set sha256 = "92974884abe2f7cb3a9e6d91f14b943482936b7d12013075278e03e5be603c46" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: meep-{{ version }}.tar.gz
-  url: https://github.com/stevengj/meep/releases/download/v{{version}}.0/meep-{{ version }}.tar.gz
+  url: https://github.com/NanoComp/meep/releases/download/v{{version}}/meep-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - no_using_namespace_std.patch
