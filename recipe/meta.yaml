@@ -25,7 +25,7 @@ requirements:
     - libctl >=4.1.0
     - harminv
     - mpb >=1.6.1
-    - gsl 2.2.*
+    - gsl
     - hdf5
     - openblas
     - numpy 1.11.*
@@ -34,10 +34,10 @@ requirements:
     - libctl >=4.1.0
     - harminv
     - mpb >=1.6.1
-    - numpy >=1.11
-    - {{ pin_compatible('openblas', max_pin='x.x.x') }}
-    - {{ pin_compatible('hdf5', max_pin='x.x.x') }}
-    - gsl 2.2.*
+    - {{ pin_compatible('numpy') }}
+    - openblas
+    - hdf5
+    - gsl
     - h5utils
     - h5py
     - scipy
