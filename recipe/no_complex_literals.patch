@@ -1,0 +1,26 @@
+From f7f3dc454ed19ae06941c7bc5885c3094fda071a Mon Sep 17 00:00:00 2001
+From: Jonathan Brielmaier <jbrielmaier@suse.de>
+Date: Thu, 22 Nov 2018 12:47:42 +0100
+Subject: [PATCH] tests: Fix build failue.
+
+Complex literals is C++14 and thus fails to build on openSUSE Tumbleweed.
+
+Signed-off-by: Jonathan Brielmaier <jbrielmaier@suse.de>
+---
+ tests/ring-ll.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/tests/ring-ll.cpp b/tests/ring-ll.cpp
+index af4f39a8..3d2b7be3 100644
+--- a/tests/ring-ll.cpp
++++ b/tests/ring-ll.cpp
+@@ -136,7 +136,8 @@ int main(int argc, char *argv[])
+   int ref_bands=3;
+   double ref_freq_re[3] = {  1.1807e-01, 1.4716e-01,  1.7525e-01  };
+   double ref_freq_im[3] = { -7.6133e-04, -2.1156e-04, -5.2215e-05 };
+-  cdouble ref_amp[3]    = { -8.28e-04-1.34e-03i, +1.23e-03-1.25e-02i, +2.83e-03-6.52e-04i};
++  cdouble ref_amp[3]    = { cdouble(-8.28e-04,-1.34e-03),
++    cdouble(1.23e-03,-1.25e-02), cdouble(2.83e-03,-6.52e-04) };
+   if (bands!=3)
+    abort("harminv found only %i/%i bands\n",bands,ref_bands);
+   for(int nb=0; nb<bands; nb++)
