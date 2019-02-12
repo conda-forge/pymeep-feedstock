@@ -1,0 +1,13 @@
+diff --git a/tests/integrate.cpp b/tests/integrate.cpp
+index 5b9a57d..efb0671 100644
+--- a/tests/integrate.cpp
++++ b/tests/integrate.cpp
+@@ -25,7 +25,7 @@
+ 
+ #include <meep.hpp>
+ using namespace meep;
+-using namespace std;
++using std::complex;
+ 
+ double size[3] = {3.0, 3.0, 2.6};
+ 
