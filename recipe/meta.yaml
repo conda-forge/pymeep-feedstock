@@ -55,6 +55,7 @@ test:
     - libmeepgeom/cyl-ellipsoid-eps-ref.h5
     - python/tests/*.py
     - python/tests/data/*
+    - python/examples/mpb_*.py
 
 about:
   home: http:/github.com/stevengj/meep
