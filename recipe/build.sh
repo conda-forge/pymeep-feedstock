@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CPPFLAGS="-I${PREFIX}/include"
+
 ./configure --prefix="${PREFIX}" --with-libctl=no
 
 make -j ${CPU_COUNT}
