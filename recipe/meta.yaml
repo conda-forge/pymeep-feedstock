@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.7.0" %}
-{% set sha256 = "92974884abe2f7cb3a9e6d91f14b943482936b7d12013075278e03e5be603c46" %}
+{% set version = "1.8.0" %}
+{% set sha256 = "75a18f258e9f1c112f8112166f25d691bdf9e0a13aa155be2b12a03b6aedfe93" %}
 
 package:
   name: {{ name }}
@@ -10,12 +10,9 @@ source:
   fn: meep-{{ version }}.tar.gz
   url: https://github.com/NanoComp/meep/releases/download/v{{version}}/meep-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - no_using_namespace_std.patch
-    - no_complex_literals.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -25,18 +22,18 @@ requirements:
     - {{ compiler('fortran') }}
   host:
     - python
-    - libctl >=4.1.0
+    - libctl 4.2.*
     - harminv
-    - mpb >=1.6.1
+    - mpb 1.8.*
     - gsl
     - hdf5
     - openblas
     - numpy 1.11.*
   run:
     - python
-    - libctl >=4.1.0
+    - libctl 4.2.*
     - harminv
-    - mpb >=1.6.1
+    - mpb 1.8.*
     - {{ pin_compatible('numpy') }}
     - openblas
     - hdf5
@@ -52,7 +49,6 @@ test:
     - meep
     - meep.mpb
   source_files:
-    - libmeepgeom/cyl-ellipsoid-eps-ref.h5
     - python/tests/*.py
     - python/tests/data/*
 

@@ -7,7 +7,6 @@ export CPPFLAGS="-I${PREFIX}/include"
 make -j ${CPU_COUNT}
 export OPENBLAS_NUM_THREADS=1
 pushd tests && make -j ${CPU_COUNT} check && popd
-pushd libmeepgeom && make -j ${CPU_COUNT} check && popd
 make install
 
 rm ${SP_DIR}/meep/_meep.a
