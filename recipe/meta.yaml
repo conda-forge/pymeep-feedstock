@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:  # [osx]
     - mac_link.patch  # [osx]
+    - 2d_include.patch  # [osx]
 
 build:
   number: 0
