@@ -10,12 +10,12 @@ source:
   fn: meep-{{ version }}.tar.gz
   url: https://github.com/NanoComp/meep/releases/download/v{{version}}/meep-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:  # [osx]
+    - mac_link.patch  # [osx]
 
 build:
   number: 0
   skip: true  # [win]
-  patches:  # [osx]
-    - mac_link.patch  # [osx]
 
 requirements:
   build:
