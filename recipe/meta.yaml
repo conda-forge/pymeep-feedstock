@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - no_using_namespace_std.patch
-    - no_complex_literals.patch
+    # - no_complex_literals.patch
 
 build:
   number: 0
