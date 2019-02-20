@@ -2,6 +2,12 @@
 
 export CPPFLAGS="-I${PREFIX}/include"
 
+if [[ $(uname) == Darwin ]]; then
+    # -dead_strip_dylibs causes the tests in make check to fail to find
+    # the default_material global variable in libctlgeom (from libctl)
+    export LDFLAGS="${LDFLAGS/-Wl,-dead_strip_dylibs/}"
+fi
+
 ./configure --prefix="${PREFIX}" --with-libctl=no
 
 make -j ${CPU_COUNT}
