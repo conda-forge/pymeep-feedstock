@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -21,13 +21,14 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
+    - libblas
+    - libcblas
     - python
     - libctl 4.2.*
     - harminv
     - mpb 1.8.*
     - gsl
     - hdf5
-    - openblas
     - numpy 1.11.*
   run:
     - python
@@ -35,7 +36,6 @@ requirements:
     - harminv
     - mpb 1.8.*
     - {{ pin_compatible('numpy') }}
-    - openblas
     - hdf5
     - gsl
     - h5utils
