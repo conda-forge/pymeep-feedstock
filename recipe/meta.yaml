@@ -23,6 +23,7 @@ requirements:
   host:
     - libblas
     - libcblas
+    - liblapack
     - python
     - libctl 4.2.*
     - harminv
