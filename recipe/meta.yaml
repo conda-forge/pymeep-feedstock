@@ -1,6 +1,13 @@
 {% set name = "pymeep" %}
 {% set version = "1.8.0" %}
 {% set sha256 = "75a18f258e9f1c112f8112166f25d691bdf9e0a13aa155be2b12a03b6aedfe93" %}
+{% set buildnumber = 2 %}
+# recipe-lint fails if mpi is undefined
+{% set mpi = mpi or 'nompi' %}
+{% if mpi == "nompi" %}
+# prioritize nompi via build number
+{% set buildnumber = buildnumber + 100 %}
+{% endif %}
 
 package:
   name: {{ name }}
@@ -12,7 +19,21 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: {{ buildnumber }}
+  {% if mpi != "nompi" %}
+  {% set mpi_prefix = "mpi_" + mpi %}
+  {% else %}
+  {% set mpi_prefix = "nompi" %}
+  {% endif %}
+  # add build string so packages can depend on
+  # mpi or nompi variants
+  # dependencies:
+  # `pymeep * mpi_mpich_*` for mpich
+  # `pymeep * mpi_*` for any mpi
+  # `pymeep * nompi_*` for no mpi
+  string: "{{ mpi_prefix }}_py{{ py }}_h{{ PKG_HASH }}_{{ buildnumber }}"
+  run_exports:
+    - {{ name }} * {{ mpi_prefix }}_*
   skip: true  # [win]
 
 requirements:
@@ -24,24 +45,28 @@ requirements:
     - libblas
     - libcblas
     - liblapack
+    - {{ mpi }}  # [mpi != 'nompi']
     - python
     - libctl 4.2.*
     - harminv
-    - mpb 1.8.*
+    - mpb 1.8.* {{ mpi_prefix }}_*
     - gsl
-    - hdf5
+    - hdf5 * {{ mpi_prefix }}_*
     - numpy 1.11.*
+    - mpi4py 3.0.*  # [mpi != 'nompi']
   run:
+    - {{ mpi }}  # [mpi != 'nompi']
     - python
     - libctl 4.2.*
     - harminv
-    - mpb 1.8.*
+    - mpb
     - {{ pin_compatible('numpy') }}
     - hdf5
     - gsl
     - h5utils
     - h5py
     - scipy
+    - mpi4py 3.0.*  # [mpi != 'nompi']
 
 test:
   requires:

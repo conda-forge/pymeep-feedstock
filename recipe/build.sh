@@ -8,7 +8,15 @@ if [[ $(uname) == Darwin ]]; then
     export LDFLAGS="${LDFLAGS/-Wl,-dead_strip_dylibs/}"
 fi
 
-./configure --prefix="${PREFIX}" --with-libctl=no
+if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
+    export CC=${PREFIX}/bin/mpicc
+    export CXX=${PREFIX}/bin/mpic++
+    export WITH_MPI=--with-mpi
+else
+    export WTIH_MPI=
+fi
+
+./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI}
 
 make -j ${CPU_COUNT}
 export OPENBLAS_NUM_THREADS=1
