@@ -31,7 +31,7 @@ build:
   # `pymeep * mpi_mpich_*` for mpich
   # `pymeep * mpi_*` for any mpi
   # `pymeep * nompi_*` for no mpi
-  string: "{{ mpi_prefix }}_py{{ py }}_h{{ PKG_HASH }}_{{ buildnumber }}"
+  string: "{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}"
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*
   skip: true  # [win]
