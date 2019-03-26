@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.8.0" %}
 {% set sha256 = "75a18f258e9f1c112f8112166f25d691bdf9e0a13aa155be2b12a03b6aedfe93" %}
-{% set buildnumber = 3 %}
+{% set buildnumber = 4 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -81,12 +81,12 @@ test:
     - python/tests/data/*
 
 about:
-  home: http:/github.com/stevengj/meep
+  home: http:/github.com/NanoComp/meep
   license: GPL-2.0
   license_file: LICENSE
   summary: Free finite-difference time-domain (FDTD) software for electromagnetic simulations
   doc_url: http://meep.readthedocs.io
-  dev_url: https://github.com/stevengj/meep
+  dev_url: https://github.com/NanoComp/meep
 
 extra:
   recipe-maintainers:
