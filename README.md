@@ -1,7 +1,7 @@
 About pymeep
 ============
 
-Home: http:/github.com/stevengj/meep
+Home: http:/github.com/NanoComp/meep
 
 Package license: GPL-2.0
 
