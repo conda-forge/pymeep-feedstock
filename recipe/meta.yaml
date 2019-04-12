@@ -54,7 +54,7 @@ requirements:
     - hdf5 * {{ mpi_prefix }}_*
     - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
-    - libgdsii >= 0.21
+    - libgdsii >=0.21
   run:
     - {{ mpi }}  # [mpi != 'nompi']
     - python
@@ -69,7 +69,7 @@ requirements:
     - scipy
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - matplotlib
-    - libgdsii >= 0.21
+    - libgdsii >=0.21
 
 test:
   requires:
