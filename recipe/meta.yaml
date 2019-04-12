@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.8.0" %}
 {% set sha256 = "75a18f258e9f1c112f8112166f25d691bdf9e0a13aa155be2b12a03b6aedfe93" %}
-{% set buildnumber = 4 %}
+{% set buildnumber = 5 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -54,6 +54,7 @@ requirements:
     - hdf5 * {{ mpi_prefix }}_*
     - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
+    - libgdsii >=0.21
   run:
     - {{ mpi }}  # [mpi != 'nompi']
     - python
@@ -68,6 +69,7 @@ requirements:
     - scipy
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - matplotlib
+    - libgdsii >=0.21
 
 test:
   requires:
