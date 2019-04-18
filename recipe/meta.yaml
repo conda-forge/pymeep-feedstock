@@ -47,7 +47,7 @@ requirements:
     - liblapack
     - {{ mpi }}  # [mpi != 'nompi']
     - python
-    - libctl 4.2.*
+    - libctl >=4.2.0
     - harminv
     - mpb 1.8.* {{ mpi_prefix }}_*
     - gsl
@@ -58,7 +58,7 @@ requirements:
   run:
     - {{ mpi }}  # [mpi != 'nompi']
     - python
-    - libctl 4.2.*
+    - libctl >=4.2.0
     - harminv
     - mpb
     - {{ pin_compatible('numpy') }}
