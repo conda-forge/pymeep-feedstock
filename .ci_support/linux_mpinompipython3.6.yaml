@@ -12,6 +12,8 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-comp7
+ffmpeg:
+- '4.0'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -29,6 +31,8 @@ liblapack:
 mpi:
 - nompi
 pin_run_as_build:
+  ffmpeg:
+    max_pin: x.x
   gsl:
     max_pin: x.x
   python:
