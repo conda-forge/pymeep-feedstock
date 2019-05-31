@@ -55,8 +55,6 @@ requirements:
     - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - libgdsii >=0.21
-    - ffmpeg
-    - mayavi
   run:
     - {{ mpi }}  # [mpi != 'nompi']
     - python
