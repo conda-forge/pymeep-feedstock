@@ -12,8 +12,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '4'
-ffmpeg:
-- '4.0'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -35,8 +33,6 @@ macos_min_version:
 mpi:
 - nompi
 pin_run_as_build:
-  ffmpeg:
-    max_pin: x.x
   gsl:
     max_pin: x.x
   python:
