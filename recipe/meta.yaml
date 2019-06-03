@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.9.0" %}
 {% set sha256 = "19dcd0f80719f16be1a46a7fae5b3391765dd83bc8bacea2a3c165190555ea06" %}
-{% set buildnumber = 5 %}
+{% set buildnumber = 6 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -70,6 +70,8 @@ requirements:
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - matplotlib
     - libgdsii >=0.21
+    - ffmpeg
+    - mayavi
 
 test:
   requires:
