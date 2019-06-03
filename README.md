@@ -220,4 +220,5 @@ Feedstock Maintainers
 =====================
 
 * [@ChristopherHogan](https://github.com/ChristopherHogan/)
+* [@oskooi](https://github.com/oskooi/)
 
