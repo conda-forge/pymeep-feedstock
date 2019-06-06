@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.10.0" %}
 {% set sha256 = "4d47bf3ab23ca6f1258aae3f2095b6239029af9e6382a10ef7decc16034833b3" %}
-{% set buildnumber = 7 %}
+{% set buildnumber = 8 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -72,6 +72,8 @@ requirements:
     - libgdsii >=0.21
     - ffmpeg >=4.0
     - mayavi
+    - sympy
+    - fenics
 
 test:
   requires:
