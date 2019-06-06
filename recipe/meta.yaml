@@ -73,7 +73,7 @@ requirements:
     - ffmpeg >=4.0
     - mayavi
     - sympy
-    - fenics
+    - fenics * {{ mpi_prefix }}_*
 
 test:
   requires:
