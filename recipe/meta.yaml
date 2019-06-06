@@ -64,11 +64,11 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - hdf5
     - gsl
-    - h5utils
-    - h5py
+    - h5utils * {{ mpi_prefix }}_*
+    - h5py * {{ mpi_prefix }}_*
     - scipy
     - mpi4py 3.0.*  # [mpi != 'nompi']
-    - matplotlib >=2.3
+    - matplotlib >=2.2
     - libgdsii >=0.21
     - ffmpeg >=4.0
     - mayavi
