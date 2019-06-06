@@ -49,9 +49,9 @@ requirements:
     - python
     - libctl >=4.2.0
     - harminv
-    - mpb 1.8.* {{ mpi_prefix }}_*
+    - mpb >=1.8.0 {{ mpi_prefix }}_*
     - gsl
-    - hdf5 * {{ mpi_prefix }}_*
+    - hdf5 1.10.4 {{ mpi_prefix }}_*
     - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - libgdsii >=0.21
@@ -68,9 +68,9 @@ requirements:
     - h5py
     - scipy
     - mpi4py 3.0.*  # [mpi != 'nompi']
-    - matplotlib
+    - matplotlib >=2.3
     - libgdsii >=0.21
-    - ffmpeg
+    - ffmpeg >=4.0
     - mayavi
 
 test:
