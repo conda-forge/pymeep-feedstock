@@ -17,9 +17,9 @@ fortran_compiler:
 fortran_compiler_version:
 - '7'
 gsl:
-- '2.4'
+- '2.5'
 hdf5:
-- 1.10.4
+- 1.10.5
 libblas:
 - 3.8 *netlib
 libcblas:
@@ -29,8 +29,6 @@ liblapack:
 mpi:
 - mpich
 pin_run_as_build:
-  gsl:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
