@@ -71,45 +71,87 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpimpichpython2.7</td>
+              <td>osx_fortran_compiler_version4mpimpichpython2.7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpichpython2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpimpichpython2.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpimpichpython3.6</td>
+              <td>osx_fortran_compiler_version4mpimpichpython3.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpichpython3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpimpichpython3.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpimpichpython3.7</td>
+              <td>osx_fortran_compiler_version4mpimpichpython3.7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpichpython3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpimpichpython3.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpinompipython2.7</td>
+              <td>osx_fortran_compiler_version4mpinompipython2.7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpinompipython2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpinompipython2.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpinompipython3.6</td>
+              <td>osx_fortran_compiler_version4mpinompipython3.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpinompipython3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpinompipython3.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpinompipython3.7</td>
+              <td>osx_fortran_compiler_version4mpinompipython3.7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpinompipython3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpinompipython3.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_fortran_compiler_version7mpimpichpython2.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpimpichpython2.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_fortran_compiler_version7mpimpichpython3.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpimpichpython3.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_fortran_compiler_version7mpimpichpython3.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpimpichpython3.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_fortran_compiler_version7mpinompipython2.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpinompipython2.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_fortran_compiler_version7mpinompipython3.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpinompipython3.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_fortran_compiler_version7mpinompipython3.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpinompipython3.7" alt="variant">
                 </a>
               </td>
             </tr>
