@@ -51,7 +51,7 @@ requirements:
     - harminv
     - mpb >=1.8.0 {{ mpi_prefix }}_*
     - gsl
-    - hdf5 {{ mpi_prefix }}_*
+    - hdf5 * {{ mpi_prefix }}_*
     - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - libgdsii >=0.21
