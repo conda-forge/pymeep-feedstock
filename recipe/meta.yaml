@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.11.0" %}
-{% set sha256 = "623837dadc2b780c6243911051619134202d5b51f560c646584ba42dde5cf008" %}
+{% set version = "1.12.0" %}
+{% set sha256 = "ad9a2d4f11349fa5f46ca7deb99ac634ab73494f2bc58ed6231a34be8a6fc200" %}
 {% set buildnumber = 8 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
