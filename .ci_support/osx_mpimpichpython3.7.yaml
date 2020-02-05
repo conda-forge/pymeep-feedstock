@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '4'
+- '9'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -11,13 +11,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '4'
+- '9'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '4'
+- '7'
 gsl:
-- '2.5'
+- '2.6'
 hdf5:
 - 1.10.5
 libblas:
