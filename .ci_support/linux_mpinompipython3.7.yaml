@@ -28,6 +28,8 @@ liblapack:
 - 3.8.0 *netlib
 mpi:
 - nompi
+numpy:
+- '1.14'
 pin_run_as_build:
   python:
     min_pin: x.x
