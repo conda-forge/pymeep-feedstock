@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.12.0" %}
-{% set sha256 = "ad9a2d4f11349fa5f46ca7deb99ac634ab73494f2bc58ed6231a34be8a6fc200" %}
+{% set version = "1.13.1" %}
+{% set sha256 = "f389750e2a5c4c87b170163f920488cc90675db804cbed1eda6d43b0b1e1632a" %}
 {% set buildnumber = 8 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
@@ -31,10 +31,10 @@ build:
   # `pymeep * mpi_mpich_*` for mpich
   # `pymeep * mpi_*` for any mpi
   # `pymeep * nompi_*` for no mpi
-  string: "{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}"
+  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*
-  skip: true  # [win]
+  skip: true  # [win or osx]
 
 requirements:
   build:
