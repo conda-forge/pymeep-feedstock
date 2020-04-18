@@ -72,6 +72,7 @@ requirements:
     - libgdsii >=0.21
     - ffmpeg >=4.0
     - mayavi
+    - autograd
 
 test:
   requires:
