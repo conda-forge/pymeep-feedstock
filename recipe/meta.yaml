@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
-{% set version = "1.13.1" %}
-{% set sha256 = "f389750e2a5c4c87b170163f920488cc90675db804cbed1eda6d43b0b1e1632a" %}
-{% set buildnumber = 9 %}
+{% set version = "1.14" %}
+{% set sha256 = "badfd67caa1d5cbc9ff038fee46d1b8ab0f5dece61f5bc70205eaebcae198717" %}
+{% set buildnumber = 0 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -15,7 +15,7 @@ package:
 
 source:
   fn: meep-{{ version }}.tar.gz
-  url: https://github.com/NanoComp/meep/releases/download/v{{version}}/meep-{{ version }}.tar.gz
+  url: https://github.com/NanoComp/meep/releases/download/v{{version}}.0/meep-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:

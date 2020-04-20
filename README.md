@@ -29,93 +29,43 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_mpimpichpython2.7</td>
+              <td>linux_mpimpichpython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpimpichpython2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpimpichpython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpimpichpython3.6</td>
+              <td>linux_mpimpichpython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpimpichpython3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpimpichpython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpimpichpython3.7</td>
+              <td>linux_mpinompipython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpimpichpython3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpinompipython2.7</td>
+              <td>linux_mpinompipython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_mpinompipython3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_mpinompipython3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_mpimpichpython2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpichpython2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_mpimpichpython3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpichpython3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_mpimpichpython3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpichpython3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_mpinompipython2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpinompipython2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_mpinompipython3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpinompipython3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_mpinompipython3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=osx&configuration=osx_mpinompipython3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
       </details>
+    </td>
+  </tr>
+  <tr>
+    <td>OSX</td>
+    <td>
+      <img src="https://img.shields.io/badge/OSX-disabled-lightgrey.svg" alt="OSX disabled">
     </td>
   </tr>
   <tr>
