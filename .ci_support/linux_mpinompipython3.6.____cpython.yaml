@@ -27,10 +27,10 @@ libcblas:
 liblapack:
 - 3.8.0 *netlib
 mpi:
-- mpich
+- nompi
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.6'
+- 3.6.* *_cpython
