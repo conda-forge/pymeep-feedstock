@@ -1,9 +1,9 @@
 About pymeep
 ============
 
-Home: http:/github.com/NanoComp/meep
+Home: https://github.com/NanoComp/meep
 
-Package license: GPL-2.0
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD 3-Clause
 
@@ -15,7 +15,21 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://travis-ci.com/conda-forge/pymeep-feedstock">
+        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/pymeep-feedstock/master.svg?label=macOS">
+      </a>
+    </td>
+  </tr><tr>
+    <td>Drone</td>
+    <td>
+      <a href="https://cloud.drone.io/conda-forge/pymeep-feedstock">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/pymeep-feedstock/master.svg?label=Linux">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -29,6 +43,34 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
+              <td>linux_aarch64_mpimpichpython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mpimpichpython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_mpimpichpython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mpimpichpython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_mpinompipython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mpinompipython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_mpinompipython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mpinompipython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_mpimpichpython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
@@ -56,6 +98,34 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.7.____cpython" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>linux_ppc64le_mpimpichpython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mpimpichpython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mpimpichpython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mpimpichpython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mpinompipython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mpinompipython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mpinompipython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5697&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pymeep-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mpinompipython3.7.____cpython" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -72,12 +142,6 @@ Current build status
     <td>Windows</td>
     <td>
       <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
-    </td>
-  </tr>
-  <tr>
-    <td>Linux_ppc64le</td>
-    <td>
-      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
