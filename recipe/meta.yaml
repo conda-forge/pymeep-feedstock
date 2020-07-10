@@ -34,7 +34,7 @@ build:
   string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*
-  skip: true  # [win]
+  skip: true  # [win or osx]
 
 requirements:
   build:
@@ -47,7 +47,7 @@ requirements:
     - liblapack
     - {{ mpi }}  # [mpi != 'nompi']
     - python
-    - libctl >=4.5.0
+    - libctl >=4.2.0
     - harminv
     - mpb >=1.10.0 {{ mpi_prefix }}_*
     - gsl
@@ -58,7 +58,7 @@ requirements:
   run:
     - {{ mpi }}  # [mpi != 'nompi']
     - python
-    - libctl >=4.5.0
+    - libctl >=4.2.0
     - harminv
     - mpb
     - {{ pin_compatible('numpy') }}
