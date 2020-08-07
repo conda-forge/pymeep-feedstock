@@ -49,10 +49,10 @@ requirements:
     - python
     - libctl 4.5.*
     - harminv
-    - mpb 1.10.* {{ mpi_prefix }}_*
+    - mpb 1.8.* {{ mpi_prefix }}_*
     - gsl
     - hdf5 1.10.4 {{ mpi_prefix }}_*
-    - numpy 1.12.*
+    - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - libgdsii >=0.21
   run:
