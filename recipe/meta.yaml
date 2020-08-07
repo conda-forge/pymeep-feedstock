@@ -42,9 +42,9 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
-    - libblas
-    - libcblas
-    - liblapack
+    - libblas 3.7.*
+    - libcblas 3.7.*
+    - liblapack 3.7.*
     - {{ mpi }}  # [mpi != 'nompi']
     - python
     - libctl 4.5.*
@@ -52,7 +52,7 @@ requirements:
     - mpb 1.10.* {{ mpi_prefix }}_*
     - gsl
     - hdf5 1.10.4 {{ mpi_prefix }}_*
-    - numpy
+    - numpy 1.11.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - libgdsii >=0.21
   run:
