@@ -15,7 +15,7 @@ package:
 
 source:
   fn: meep-{{ version }}.tar.gz
-  url: https://github.com/NanoComp/meep/releases/download/v{{version}}/meep-{{ version }}.tar.gz
+  url: https://github.com/NanoComp/meep/releases/download/v{{ version }}/meep-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -42,9 +42,9 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
-    - libblas 3.7.*
-    - libcblas 3.7.*
-    - liblapack 3.7.*
+    - libblas
+    - libcblas
+    - liblapack
     - {{ mpi }}  # [mpi != 'nompi']
     - python
     - libctl 4.5.*
@@ -52,7 +52,7 @@ requirements:
     - mpb 1.10.* {{ mpi_prefix }}_*
     - gsl
     - hdf5 1.10.4 {{ mpi_prefix }}_*
-    - numpy 1.11.*
+    - numpy 1.12.*
     - mpi4py 3.0.*  # [mpi != 'nompi']
     - libgdsii >=0.21
   run:
@@ -87,7 +87,7 @@ test:
 
 about:
   home: http:/github.com/NanoComp/meep
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_file: LICENSE
   summary: Free finite-difference time-domain (FDTD) software for electromagnetic simulations
   doc_url: http://meep.readthedocs.io
