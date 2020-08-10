@@ -68,7 +68,7 @@ requirements:
     - h5py * {{ mpi_prefix }}_*
     - scipy
     - mpi4py 3.0.*  # [mpi != 'nompi']
-    - matplotlib >=2.2
+    - matplotlib-base >=2.2
     - libgdsii >=0.21
     - ffmpeg >=4.0
     - mayavi
