@@ -41,38 +41,46 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+
   host:
-    - libblas
-    - libcblas
-    - liblapack
-    - {{ mpi }}  # [mpi != 'nompi']
-    - python
-    - libctl >=4.2.0
-    - harminv
-    - mpb >=1.8.0 {{ mpi_prefix }}_*
-    - gsl
-    - hdf5 1.10.4 {{ mpi_prefix }}_*
-    - numpy 1.11.*
-    - mpi4py 3.0.*  # [mpi != 'nompi']
+    - libblas >=3.8
+    - libcblas >=3.8
+    - liblapack >=3.8
     - libgdsii >=0.21
+    - {{ mpi }}    # [mpi != 'nompi']
+    - mpi4py >=3.0 # [mpi != 'nompi']
+    - python
+    - libctl >=4.5
+    - harminv >=1.4.1
+    - mpb >=1.10 {{ mpi_prefix }}_*
+    - hdf5 >=1.10.6 {{ mpi_prefix }}_*
+    - numpy 1.16
+    - gsl
+
   run:
-    - {{ mpi }}  # [mpi != 'nompi']
-    - python
-    - libctl >=4.2.0
-    - harminv
-    - mpb
-    - {{ pin_compatible('numpy') }}
-    - hdf5
-    - gsl
-    - h5utils * {{ mpi_prefix }}_*
-    - h5py * {{ mpi_prefix }}_*
-    - scipy
-    - mpi4py 3.0.*  # [mpi != 'nompi']
-    - matplotlib >=2.2
+    - libblas >=3.8
+    - libcblas >=3.8
+    - liblapack >=3.8
     - libgdsii >=0.21
-    - ffmpeg >=4.0
+    - {{ mpi }}    # [mpi != 'nompi']
+    - mpi4py >=3.0 # [mpi != 'nompi']
+    - python
+    - libctl >=4.5
+    - harminv >=1.4.1
+    - mpb >=1.10 {{ mpi_prefix }}_*
+    - hdf5 1.10.6 {{ mpi_prefix }}_*
+    - {{ pin_compatible('numpy') }}
+
+    - h5py * {{ mpi_prefix }}_*
+    - matplotlib >=2.2
+    - scipy
     - mayavi
     - autograd
+    - ffmpeg
+
+  # There are dependency conflicts when this is included...
+  #   - h5utils * {{ mpi_prefix }}_*
+
 
 test:
   requires:
