@@ -46,8 +46,8 @@ requirements:
     - libcblas >=3.8
     - liblapack >=3.8
     - libgdsii >=0.21
-    - {{ mpi }}    # [mpi != 'nompi']
-    - mpi4py >=3.0 # [mpi != 'nompi']
+    - {{ mpi }}  # [mpi != 'nompi']
+    - mpi4py >=3.0  # [mpi != 'nompi']
     - python
     - libctl >=4.5
     - harminv >=1.4.1
@@ -62,8 +62,8 @@ requirements:
     - libcblas >=3.8
     - liblapack >=3.8
     - libgdsii >=0.21
-    - {{ mpi }}    # [mpi != 'nompi']
-    - mpi4py >=3.0 # [mpi != 'nompi']
+    - {{ mpi }}  # [mpi != 'nompi']
+    - mpi4py >=3.0  # [mpi != 'nompi']
     - python
     - libctl >=4.5
     - harminv >=1.4.1
