@@ -25,12 +25,11 @@ build:
   {% else %}
   {% set mpi_prefix = "nompi" %}
   {% endif %}
-  # add build string so packages can depend on
-  # mpi or nompi variants
+  # add build string so packages can depend on mpi or nompi variants
   # dependencies:
-  # `pymeep * mpi_mpich_*` for mpich
-  # `pymeep * mpi_*` for any mpi
-  # `pymeep * nompi_*` for no mpi
+  #     `pymeep * mpi_mpich_*` for mpich
+  #     `pymeep * mpi_*` for any mpi
+  #     `pymeep * nompi_*` for no mpi
   string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*
@@ -58,6 +57,7 @@ requirements:
     - gsl
 
   run:
+    # more or less a copy of the specs above
     - libblas >=3.8
     - libcblas >=3.8
     - liblapack >=3.8
@@ -71,16 +71,16 @@ requirements:
     - hdf5 1.10.6 {{ mpi_prefix }}_*
     - {{ pin_compatible('numpy') }}
 
+    # extras needed or typically used at runtime
     - h5py * {{ mpi_prefix }}_*
     - matplotlib >=2.2
     - scipy
     - mayavi
     - autograd
     - ffmpeg
-
-  # There are dependency conflicts when this is included...
-  #   - h5utils * {{ mpi_prefix }}_*
-
+    - zlib
+    - libopenblas
+    - fftw
 
 test:
   requires:
