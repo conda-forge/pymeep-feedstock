@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.15.0" %}
 {% set sha256 = "be50ccded3f1fb97e5c3a4e0351e2ff864d2a94c95ed80e29613d63a72c371f7" %}
-{% set buildnumber = 0 %}
+{% set buildnumber = 1 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -25,54 +25,62 @@ build:
   {% else %}
   {% set mpi_prefix = "nompi" %}
   {% endif %}
-  # add build string so packages can depend on
-  # mpi or nompi variants
+  # add build string so packages can depend on mpi or nompi variants
   # dependencies:
-  # `pymeep * mpi_mpich_*` for mpich
-  # `pymeep * mpi_*` for any mpi
-  # `pymeep * nompi_*` for no mpi
+  #     `pymeep * mpi_mpich_*` for mpich
+  #     `pymeep * mpi_*` for any mpi
+  #     `pymeep * nompi_*` for no mpi
   string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*
-  skip: true  # [win or osx]
+  skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+
   host:
-    - libblas
-    - libcblas
-    - liblapack
-    - {{ mpi }}  # [mpi != 'nompi']
-    - python
-    - libctl >=4.2.0
-    - harminv
-    - mpb >=1.8.0 {{ mpi_prefix }}_*
-    - gsl
-    - hdf5 1.10.4 {{ mpi_prefix }}_*
-    - numpy 1.11.*
-    - mpi4py 3.0.*  # [mpi != 'nompi']
+    - libblas >=3.8
+    - libcblas >=3.8
+    - liblapack >=3.8
     - libgdsii >=0.21
+    - {{ mpi }}  # [mpi != 'nompi']
+    - mpi4py >=3.0  # [mpi != 'nompi']
+    - python
+    - libctl >=4.5
+    - harminv >=1.4.1
+    - mpb >=1.10 {{ mpi_prefix }}_*
+    - hdf5 >=1.10.6 {{ mpi_prefix }}_*
+    - numpy 1.16
+    - gsl
+
   run:
-    - {{ mpi }}  # [mpi != 'nompi']
-    - python
-    - libctl >=4.2.0
-    - harminv
-    - mpb
-    - {{ pin_compatible('numpy') }}
-    - hdf5
-    - gsl
-    - h5utils * {{ mpi_prefix }}_*
-    - h5py * {{ mpi_prefix }}_*
-    - scipy
-    - mpi4py 3.0.*  # [mpi != 'nompi']
-    - matplotlib >=2.2
+    # more or less a copy of the specs above
+    - libblas >=3.8
+    - libcblas >=3.8
+    - liblapack >=3.8
     - libgdsii >=0.21
-    - ffmpeg >=4.0
+    - {{ mpi }}  # [mpi != 'nompi']
+    - mpi4py >=3.0  # [mpi != 'nompi']
+    - python
+    - libctl >=4.5
+    - harminv >=1.4.1
+    - mpb >=1.10 {{ mpi_prefix }}_*
+    - hdf5 1.10.6 {{ mpi_prefix }}_*
+    - {{ pin_compatible('numpy') }}
+
+    # extras needed or typically used at runtime
+    - h5py * {{ mpi_prefix }}_*
+    - matplotlib >=2.2
+    - scipy
     - mayavi
     - autograd
+    - ffmpeg
+    - zlib
+    - libopenblas
+    - fftw
 
 test:
   requires:
