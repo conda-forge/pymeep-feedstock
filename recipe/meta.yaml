@@ -52,8 +52,12 @@ requirements:
     - libctl >=4.5
     - harminv >=1.4.1
     - mpb >=1.11 {{ mpi_prefix }}_*
-    - hdf5 1.10.5 {{ mpi_prefix }}_*
-    - numpy 1.16
+    # We need to list hdf5 twice to get version pinning from
+    # conda_build_config.yaml, (which falls back to the one from conda-forge,)
+    # and build pinning from {{ mpi_prefix }}
+    - hdf5
+    - hdf5 * {{ mpi_prefix }}_*
+    - numpy
     - gsl
 
   run:
@@ -68,7 +72,7 @@ requirements:
     - libctl >=4.5
     - harminv >=1.4.1
     - mpb >=1.11 {{ mpi_prefix }}_*
-    - hdf5 1.10.5 {{ mpi_prefix }}_*
+    - hdf5
     - {{ pin_compatible('numpy') }}
 
     # extras needed or typically used at runtime
