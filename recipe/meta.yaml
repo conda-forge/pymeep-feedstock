@@ -51,7 +51,7 @@ requirements:
     - python
     - libctl >=4.5
     - harminv >=1.4.1
-    - mpb >=1.10 {{ mpi_prefix }}_*
+    - mpb >=1.11 {{ mpi_prefix }}_*
     - hdf5 1.10.5 {{ mpi_prefix }}_*
     - numpy 1.16
     - gsl
@@ -67,7 +67,7 @@ requirements:
     - python
     - libctl >=4.5
     - harminv >=1.4.1
-    - mpb >=1.10 {{ mpi_prefix }}_*
+    - mpb >=1.11 {{ mpi_prefix }}_*
     - hdf5 1.10.5 {{ mpi_prefix }}_*
     - {{ pin_compatible('numpy') }}
 
