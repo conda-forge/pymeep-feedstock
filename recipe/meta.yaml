@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.15.0" %}
 {% set sha256 = "be50ccded3f1fb97e5c3a4e0351e2ff864d2a94c95ed80e29613d63a72c371f7" %}
-{% set buildnumber = 2 %}
+{% set buildnumber = 3 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
 {% if mpi == "nompi" %}
@@ -52,7 +52,7 @@ requirements:
     - libctl >=4.5
     - harminv >=1.4.1
     - mpb >=1.10 {{ mpi_prefix }}_*
-    - hdf5 >=1.10.6 {{ mpi_prefix }}_*
+    - hdf5 1.10.5 {{ mpi_prefix }}_*
     - numpy 1.16
     - gsl
 
@@ -68,10 +68,11 @@ requirements:
     - libctl >=4.5
     - harminv >=1.4.1
     - mpb >=1.10 {{ mpi_prefix }}_*
-    - hdf5 1.10.6 {{ mpi_prefix }}_*
+    - hdf5 1.10.5 {{ mpi_prefix }}_*
     - {{ pin_compatible('numpy') }}
 
     # extras needed or typically used at runtime
+    - h5utils * {{ mpi_prefix }}_*
     - h5py * {{ mpi_prefix }}_*
     - matplotlib-base >=2.2
     - scipy
