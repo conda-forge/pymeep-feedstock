@@ -5,11 +5,13 @@ Home: https:/github.com/NanoComp/meep
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymeep-feedstock/blob/master/LICENSE.txt)
 
 Summary: Free finite-difference time-domain (FDTD) software for electromagnetic simulations
 
+Development: https://github.com/NanoComp/meep
 
+Documentation: https://meep.readthedocs.io
 
 Current build status
 ====================
