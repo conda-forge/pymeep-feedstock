@@ -15,7 +15,7 @@ cxx_compiler_version:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '7.5'
+- '7'
 gsl:
 - '2.6'
 hdf5:
@@ -34,3 +34,9 @@ python:
 - 3.8.* *_cpython
 target_platform:
 - osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+  - fortran_compiler_version
+- - python
+  - numpy
