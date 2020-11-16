@@ -8,23 +8,41 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_mpimpichpython3.6.____cpython:
-        CONFIG: osx_64_mpimpichpython3.6.____cpython
+      osx_64_fortran_compiler_version7mpimpichpython3.6.____cpython:
+        CONFIG: osx_64_fortran_compiler_version7mpimpichpython3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichpython3.7.____cpython:
-        CONFIG: osx_64_mpimpichpython3.7.____cpython
+      osx_64_fortran_compiler_version7mpimpichpython3.7.____cpython:
+        CONFIG: osx_64_fortran_compiler_version7mpimpichpython3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichpython3.8.____cpython:
-        CONFIG: osx_64_mpimpichpython3.8.____cpython
+      osx_64_fortran_compiler_version7mpimpichpython3.8.____cpython:
+        CONFIG: osx_64_fortran_compiler_version7mpimpichpython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompipython3.6.____cpython:
-        CONFIG: osx_64_mpinompipython3.6.____cpython
+      osx_64_fortran_compiler_version7mpinompipython3.6.____cpython:
+        CONFIG: osx_64_fortran_compiler_version7mpinompipython3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompipython3.7.____cpython:
-        CONFIG: osx_64_mpinompipython3.7.____cpython
+      osx_64_fortran_compiler_version7mpinompipython3.7.____cpython:
+        CONFIG: osx_64_fortran_compiler_version7mpinompipython3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompipython3.8.____cpython:
-        CONFIG: osx_64_mpinompipython3.8.____cpython
+      osx_64_fortran_compiler_version7mpinompipython3.8.____cpython:
+        CONFIG: osx_64_fortran_compiler_version7mpinompipython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_fortran_compiler_version9mpimpichpython3.6.____cpython:
+        CONFIG: osx_64_fortran_compiler_version9mpimpichpython3.6.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_fortran_compiler_version9mpimpichpython3.7.____cpython:
+        CONFIG: osx_64_fortran_compiler_version9mpimpichpython3.7.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_fortran_compiler_version9mpimpichpython3.8.____cpython:
+        CONFIG: osx_64_fortran_compiler_version9mpimpichpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_fortran_compiler_version9mpinompipython3.6.____cpython:
+        CONFIG: osx_64_fortran_compiler_version9mpinompipython3.6.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_fortran_compiler_version9mpinompipython3.7.____cpython:
+        CONFIG: osx_64_fortran_compiler_version9mpinompipython3.7.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_fortran_compiler_version9mpinompipython3.8.____cpython:
+        CONFIG: osx_64_fortran_compiler_version9mpinompipython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 

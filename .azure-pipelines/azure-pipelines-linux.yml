@@ -8,30 +8,54 @@ jobs:
     vmImage: ubuntu-16.04
   strategy:
     matrix:
-      linux_64_mpimpichpython3.6.____cpython:
-        CONFIG: linux_64_mpimpichpython3.6.____cpython
+      linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpimpichpython3.6.____cpython:
+        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpimpichpython3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_mpimpichpython3.7.____cpython:
-        CONFIG: linux_64_mpimpichpython3.7.____cpython
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpimpichpython3.7.____cpython:
+        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpimpichpython3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_mpimpichpython3.8.____cpython:
-        CONFIG: linux_64_mpimpichpython3.8.____cpython
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpimpichpython3.8.____cpython:
+        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpimpichpython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_mpinompipython3.6.____cpython:
-        CONFIG: linux_64_mpinompipython3.6.____cpython
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpinompipython3.6.____cpython:
+        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpinompipython3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_mpinompipython3.7.____cpython:
-        CONFIG: linux_64_mpinompipython3.7.____cpython
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpinompipython3.7.____cpython:
+        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpinompipython3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_mpinompipython3.8.____cpython:
-        CONFIG: linux_64_mpinompipython3.8.____cpython
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpinompipython3.8.____cpython:
+        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7mpinompipython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpimpichpython3.6.____cpython:
+        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpimpichpython3.6.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpimpichpython3.7.____cpython:
+        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpimpichpython3.7.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpimpichpython3.8.____cpython:
+        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpimpichpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpinompipython3.6.____cpython:
+        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpinompipython3.6.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpinompipython3.7.____cpython:
+        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpinompipython3.7.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpinompipython3.8.____cpython:
+        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9mpinompipython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
 
   steps:
