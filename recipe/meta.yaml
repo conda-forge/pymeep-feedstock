@@ -72,15 +72,15 @@ requirements:
     - {{ pin_compatible('numpy') }}
 
     # extras needed or typically used at runtime
-    - h5utils * {{ mpi_prefix }}_*
-    - h5py * {{ mpi_prefix }}_*
-    - matplotlib-base >=2.2
-    - scipy
-    - mayavi
-    - autograd
-    - ffmpeg
-    - zlib
-    - libopenblas
+    #- h5utils * {{ mpi_prefix }}_*
+    #- h5py * {{ mpi_prefix }}_*
+    #- matplotlib-base >=2.2
+    #- scipy
+    #- mayavi
+    #- autograd
+    #- ffmpeg
+    #- zlib
+    #- libopenblas
 
 test:
   requires:
