@@ -57,14 +57,14 @@ requirements:
 
   run:
     # more or less a copy of the specs above
-    - libblas >=3.8
-    - libcblas >=3.8
-    - liblapack >=3.8
+    - libblas
+    - libcblas
+    - liblapack
     - libgdsii >=0.21
     - {{ mpi }}  # [mpi != 'nompi']
     - mpi4py >=3.0  # [mpi != 'nompi']
     - python
-    - libctl >=4.5
+    - libctl >=4.5.0
     - harminv >=1.4.1
     - mpb >=1.11 {{ mpi_prefix }}_*
     - hdf5 * {{ mpi_prefix }}_*
