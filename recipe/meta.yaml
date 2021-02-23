@@ -7,6 +7,9 @@
 {% if mpi == "nompi" %}
 # prioritize nompi via build number
 {% set buildnumber = buildnumber + 100 %}
+{% set mpi_prefix = "nompi" %}
+{% else %}
+{% set mpi_prefix = "mpi_" + mpi %}
 {% endif %}
 
 package:
@@ -20,11 +23,6 @@ source:
 
 build:
   number: {{ buildnumber }}
-  {% if mpi != "nompi" %}
-  {% set mpi_prefix = "mpi_" + mpi %}
-  {% else %}
-  {% set mpi_prefix = "nompi" %}
-  {% endif %}
   # add build string so packages can depend on mpi or nompi variants
   # dependencies:
   #     `pymeep * mpi_mpich_*` for mpich
