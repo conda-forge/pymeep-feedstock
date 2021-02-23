@@ -21,7 +21,7 @@ fortran_compiler_version:
 gsl:
 - '2.6'
 hdf5:
-- 1.10.5
+- 1.10.6
 mpi:
 - mpich
 numpy:
