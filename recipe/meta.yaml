@@ -87,6 +87,7 @@ requirements:
 test:
   requires:
     - parallel
+    - matplotlib-base
   imports:
     - meep
     - meep.mpb
