@@ -71,9 +71,11 @@ requirements:
     - fftw * {{ mpi_prefix }}_*
     - {{ pin_compatible('numpy') }}
 
-    # extras needed or typically used at runtime
+    # Required at runtime
+    - h5py * {{ mpi_prefix }}_*
+
+    # Extras typically used at runtime
     #- h5utils * {{ mpi_prefix }}_*
-    #- h5py * {{ mpi_prefix }}_*
     #- matplotlib-base >=2.2
     #- scipy
     #- mayavi
