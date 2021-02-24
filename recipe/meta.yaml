@@ -110,6 +110,12 @@ outputs:
         - h5utils * {{ mpi_prefix }}_*
         - mayavi
     test:
+      requires:
+        - parallel
+        - matplotlib-base
+        - autograd
+        - scipy
+        - ffmpeg
       imports:
         - meep
         - meep.mpb
