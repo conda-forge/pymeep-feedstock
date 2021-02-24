@@ -34,8 +34,6 @@ outputs:
     #     `pymeep * nompi_*` for no mpi
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-      run_exports:
-        - {{ pin_subpackage(name, min_pin='x.x.x', max_pin='x') }} {{ mpi_prefix }}_*
     requirements:
       build:
         - {{ compiler('c') }}
@@ -99,8 +97,6 @@ outputs:
     #     `pymeep * nompi_*` for no mpi
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-      run_exports:
-        - {{ name }}-extras * {{ mpi_prefix }}_*
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }} {{ mpi_prefix }}_*
