@@ -75,18 +75,15 @@ requirements:
     - h5py * {{ mpi_prefix }}_*
 
     # Extras typically used at runtime
-    #- h5utils * {{ mpi_prefix }}_*
     #- matplotlib-base
-    #- scipy
-    #- mayavi
     #- autograd
+    #- scipy
     #- ffmpeg
-    #- zlib
-    #- libopenblas
+    #- h5utils * {{ mpi_prefix }}_*
+    #- mayavi
 
 test:
   requires:
-    - parallel
     - matplotlib-base
     - autograd
     - scipy
