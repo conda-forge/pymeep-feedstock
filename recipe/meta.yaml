@@ -12,12 +12,8 @@
 {% set mpi_prefix = "mpi_" + mpi %}
 {% endif %}
 
-# We define a metapackage with extras needed for the tutorials/tests.
-# The metapackage pymeep-extras requires the subpackage pymeep.
-# Both pymeep and pymeep-extras are outputs of this recipe.
-
 package:
-  name: {{ name }}-extras
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -28,41 +24,15 @@ source:
 build:
   number: {{ buildnumber }}
   skip: true  # [win or py<36 or python_impl == "pypy"]
-  # add build string so packages can depend on mpi or nompi variants
-  # dependencies:
-  #     `pymeep * mpi_mpich_*` for mpich
-  #     `pymeep * mpi_*` for any mpi
-  #     `pymeep * nompi_*` for no mpi
-  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-  run_exports:
-    - {{ name }}-extras * {{ mpi_prefix }}_*
-
-requirements:
-  run:
-    - {{ pin_subpackage(name, exact=True) }} {{ mpi_prefix }}_*
-    # Extras typically used at runtime
-    - matplotlib-base
-    - autograd
-    - scipy
-    - ffmpeg
-    - h5utils * {{ mpi_prefix }}_*
-    - mayavi
-
-test:
-  imports:
-    - meep
-    - meep.mpb
 
 outputs:
   # Define the base package for pymeep.
   - name: {{ name }}
-    version: {{ version }}
     # Add build string so packages can depend on mpi or nompi variants of dependencies:
     #     `pymeep * mpi_mpich_*` for mpich
     #     `pymeep * mpi_*` for any mpi
     #     `pymeep * nompi_*` for no mpi
     build:
-      skip: true  # [win or py<36 or python_impl == "pypy"]
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
       run_exports:
         - {{ pin_subpackage(name, min_pin='x.x.x', max_pin='x') }} {{ mpi_prefix }}_*
@@ -119,6 +89,32 @@ outputs:
         - tests/cyl-ellipsoid-eps-ref.h5
         - python/tests/*.py
         - python/tests/data/*
+
+  # Define a metapackage with extras needed for the tutorials/tests.
+  - name: {{ name }}-extras
+    # add build string so packages can depend on mpi or nompi variants
+    # dependencies:
+    #     `pymeep * mpi_mpich_*` for mpich
+    #     `pymeep * mpi_*` for any mpi
+    #     `pymeep * nompi_*` for no mpi
+    build:
+      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+      run_exports:
+        - {{ name }}-extras * {{ mpi_prefix }}_*
+    requirements:
+      run:
+        - {{ pin_subpackage(name, exact=True) }} {{ mpi_prefix }}_*
+        # Extras typically used at runtime
+        - matplotlib-base
+        - autograd
+        - scipy
+        - ffmpeg
+        - h5utils * {{ mpi_prefix }}_*
+        - mayavi
+    test:
+      imports:
+        - meep
+        - meep.mpb
 
 about:
   home: https://github.com/NanoComp/meep
