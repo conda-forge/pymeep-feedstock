@@ -72,6 +72,9 @@ outputs:
         - fftw * {{ mpi_prefix }}_*
         - {{ pin_compatible('numpy') }}
         - h5py * {{ mpi_prefix }}_*
+        - zlib
+        - libopenblas
+        - _openmp_mutex  # [linux]
     test:
       requires:
         - parallel
