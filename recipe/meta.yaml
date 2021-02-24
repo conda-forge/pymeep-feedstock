@@ -23,78 +23,95 @@ source:
 
 build:
   number: {{ buildnumber }}
-  # add build string so packages can depend on mpi or nompi variants
-  # dependencies:
-  #     `pymeep * mpi_mpich_*` for mpich
-  #     `pymeep * mpi_*` for any mpi
-  #     `pymeep * nompi_*` for no mpi
-  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-  run_exports:
-    - {{ name }} * {{ mpi_prefix }}_*
   skip: true  # [win or py<36 or python_impl == "pypy"]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
+outputs:
+  # Define the base package for pymeep.
+  - name: {{ name }}
+    # Add build string so packages can depend on mpi or nompi variants of dependencies:
+    #     `pymeep * mpi_mpich_*` for mpich
+    #     `pymeep * mpi_*` for any mpi
+    #     `pymeep * nompi_*` for no mpi
+    string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+    build:
+      run_exports:
+        - {{ pin_subpackage(name, min_pin='x.x.x', max_pin='x') }} {{ mpi_prefix }}_*
+  requirements:
+    build:
+      - {{ compiler('c') }}
+      - {{ compiler('cxx') }}
+      - {{ compiler('fortran') }}
+    host:
+      - libblas
+      - libcblas
+      - liblapack
+      - libgdsii >=0.21
+      - {{ mpi }}  # [mpi != 'nompi']
+      - mpi4py >=3.0  # [mpi != 'nompi']
+      - python
+      - libctl >=4.5.0
+      - harminv >=1.4.1
+      - mpb >=1.11 {{ mpi_prefix }}_*
+      - hdf5 * {{ mpi_prefix }}_*
+      - fftw * {{ mpi_prefix }}_*
+      - numpy
+      - gsl
+    run:
+      # more or less a copy of the specs above
+      - libblas
+      - libcblas
+      - liblapack
+      - libgdsii >=0.21
+      - {{ mpi }}  # [mpi != 'nompi']
+      - mpi4py >=3.0  # [mpi != 'nompi']
+      - python
+      - libctl >=4.5.0
+      - harminv >=1.4.1
+      - mpb >=1.11 {{ mpi_prefix }}_*
+      - hdf5 * {{ mpi_prefix }}_*
+      - fftw * {{ mpi_prefix }}_*
+      - {{ pin_compatible('numpy') }}
+      - h5py * {{ mpi_prefix }}_*
+  test:
+    requires:
+      - parallel
+      - matplotlib-base
+      - autograd
+      - scipy
+      - ffmpeg
+    imports:
+      - meep
+      - meep.mpb
+    source_files:
+      - tests/cyl-ellipsoid-eps-ref.h5
+      - python/tests/*.py
+      - python/tests/data/*
 
-  host:
-    - libblas
-    - libcblas
-    - liblapack
-    - libgdsii >=0.21
-    - {{ mpi }}  # [mpi != 'nompi']
-    - mpi4py >=3.0  # [mpi != 'nompi']
-    - python
-    - libctl >=4.5.0
-    - harminv >=1.4.1
-    - mpb >=1.11 {{ mpi_prefix }}_*
-    - hdf5 * {{ mpi_prefix }}_*
-    - fftw * {{ mpi_prefix }}_*
-    - numpy
-    - gsl
-
-  run:
-    # more or less a copy of the specs above
-    - libblas
-    - libcblas
-    - liblapack
-    - libgdsii >=0.21
-    - {{ mpi }}  # [mpi != 'nompi']
-    - mpi4py >=3.0  # [mpi != 'nompi']
-    - python
-    - libctl >=4.5.0
-    - harminv >=1.4.1
-    - mpb >=1.11 {{ mpi_prefix }}_*
-    - hdf5 * {{ mpi_prefix }}_*
-    - fftw * {{ mpi_prefix }}_*
-    - {{ pin_compatible('numpy') }}
-
-    # Required at runtime
-    - h5py * {{ mpi_prefix }}_*
-
-    # Extras typically used at runtime
-    #- matplotlib-base
-    #- autograd
-    #- scipy
-    #- ffmpeg
-    #- h5utils * {{ mpi_prefix }}_*
-    #- mayavi
-
-test:
-  requires:
-    - matplotlib-base
-    - autograd
-    - scipy
-    - ffmpeg
-  imports:
-    - meep
-    - meep.mpb
-  source_files:
-    - tests/cyl-ellipsoid-eps-ref.h5
-    - python/tests/*.py
-    - python/tests/data/*
+  # Define a metapackage with extras needed for the tutorials/tests.
+  - name: {{ name }}-extras
+    # add build string so packages can depend on mpi or nompi variants
+    # dependencies:
+    #     `pymeep * mpi_mpich_*` for mpich
+    #     `pymeep * mpi_*` for any mpi
+    #     `pymeep * nompi_*` for no mpi
+    string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+    build:
+      run_exports:
+        - {{ name }}-extras * {{ mpi_prefix }}_*
+  requirements:
+    run:
+      - {{ pin_subpackage(name, exact=True) }} {{ mpi_prefix }}_*
+      # Extras typically used at runtime
+      - matplotlib-base
+      - autograd
+      - scipy
+      - ffmpeg
+      - h5utils * {{ mpi_prefix }}_*
+      - mayavi
+  test:
+    imports:
+      - meep
+      - meep.mpb
 
 about:
   home: https://github.com/NanoComp/meep
