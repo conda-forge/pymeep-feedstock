@@ -25,6 +25,12 @@ build:
   number: {{ buildnumber }}
   skip: true  # [win or py<36 or python_impl == "pypy"]
 
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+
 outputs:
   # Define the base package for pymeep.
   - name: {{ name }}
@@ -34,11 +40,6 @@ outputs:
     #     `pymeep * nompi_*` for no mpi
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-    requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
       host:
         - libblas
         - libcblas
