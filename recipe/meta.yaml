@@ -119,6 +119,10 @@ outputs:
       imports:
         - meep
         - meep.mpb
+      source_files:
+        - tests/cyl-ellipsoid-eps-ref.h5
+        - python/tests/*.py
+        - python/tests/data/*
 
 about:
   home: https://github.com/NanoComp/meep
