@@ -76,7 +76,7 @@ requirements:
 
     # Extras typically used at runtime
     #- h5utils * {{ mpi_prefix }}_*
-    #- matplotlib-base >=2.2
+    #- matplotlib-base
     #- scipy
     #- mayavi
     #- autograd
@@ -88,6 +88,9 @@ test:
   requires:
     - parallel
     - matplotlib-base
+    - autograd
+    - scipy
+    - ffmpeg
   imports:
     - meep
     - meep.mpb
