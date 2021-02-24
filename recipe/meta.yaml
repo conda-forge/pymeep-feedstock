@@ -40,6 +40,7 @@ outputs:
     #     `pymeep * nompi_*` for no mpi
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+    requirements:
       host:
         - libblas
         - libcblas
