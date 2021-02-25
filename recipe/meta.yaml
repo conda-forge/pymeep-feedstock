@@ -101,7 +101,7 @@ outputs:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
     requirements:
       run:
-        - {{ pin_subpackage("pymeep", exact=True) }} {{ mpi_prefix }}_*
+        - {{ pin_subpackage("pymeep", exact=True) }}
         # Extras typically used at runtime
         - matplotlib-base
         - autograd
