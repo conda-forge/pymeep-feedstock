@@ -34,7 +34,7 @@ outputs:
     #     `pymeep * nompi_*` for no mpi
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-      script: pymeep_build.sh
+      script: ./pymeep_build.sh
     requirements:
       build:
         - {{ compiler('c') }}
@@ -84,7 +84,7 @@ outputs:
       imports:
         - meep
         - meep.mpb
-      script: pymeep_run_test.sh
+      script: ./pymeep_run_test.sh
       source_files:
         - tests/cyl-ellipsoid-eps-ref.h5
         - python/tests/*.py
