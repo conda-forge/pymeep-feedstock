@@ -13,7 +13,7 @@
 {% endif %}
 
 package:
-  name: {{ name }}
+  name: pymeep-split
   version: {{ version }}
 
 source:
@@ -25,22 +25,21 @@ build:
   number: {{ buildnumber }}
   skip: true  # [win or py<36 or python_impl == "pypy"]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
-
 outputs:
   # Define the base package for pymeep.
-  - name: {{ name }}
+  - name: pymeep
     # Add build string so packages can depend on mpi or nompi variants of dependencies:
     #     `pymeep * mpi_mpich_*` for mpich
     #     `pymeep * mpi_*` for any mpi
     #     `pymeep * nompi_*` for no mpi
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+      script: pymeep_build.sh
     requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('fortran') }}
       host:
         - libblas
         - libcblas
@@ -85,13 +84,14 @@ outputs:
       imports:
         - meep
         - meep.mpb
+      script: pymeep_run_test.sh
       source_files:
         - tests/cyl-ellipsoid-eps-ref.h5
         - python/tests/*.py
         - python/tests/data/*
 
   # Define a metapackage with extras needed for the tutorials/tests.
-  - name: {{ name }}-extras
+  - name: pymeep-extras
     # add build string so packages can depend on mpi or nompi variants
     # dependencies:
     #     `pymeep * mpi_mpich_*` for mpich
@@ -101,7 +101,7 @@ outputs:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
     requirements:
       run:
-        - {{ pin_subpackage(name, exact=True) }} {{ mpi_prefix }}_*
+        - {{ pin_subpackage("pymeep", exact=True) }} {{ mpi_prefix }}_*
         # Extras typically used at runtime
         - matplotlib-base
         - autograd
@@ -110,19 +110,9 @@ outputs:
         - h5utils * {{ mpi_prefix }}_*
         - mayavi
     test:
-      requires:
-        - parallel
-        - matplotlib-base
-        - autograd
-        - scipy
-        - ffmpeg
       imports:
         - meep
         - meep.mpb
-      source_files:
-        - tests/cyl-ellipsoid-eps-ref.h5
-        - python/tests/*.py
-        - python/tests/data/*
 
 about:
   home: https://github.com/NanoComp/meep
