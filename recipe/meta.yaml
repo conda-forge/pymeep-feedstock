@@ -32,9 +32,9 @@ outputs:
     #     `pymeep * mpi_mpich_*` for mpich
     #     `pymeep * mpi_*` for any mpi
     #     `pymeep * nompi_*` for no mpi
+    script: pymeep_build.sh
     build:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
-      script: ./pymeep_build.sh
     requirements:
       build:
         - {{ compiler('c') }}
