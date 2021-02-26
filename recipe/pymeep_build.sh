@@ -9,11 +9,11 @@ if [[ $(uname) == Darwin ]]; then
 fi
 
 if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
-    export CC=${PREFIX}/bin/mpicc
-    export CXX=${PREFIX}/bin/mpic++
-    export WITH_MPI=--with-mpi
+    export CC="${PREFIX}/bin/mpicc"
+    export CXX="${PREFIX}/bin/mpic++"
+    export WITH_MPI="--with-mpi"
 else
-    export WTIH_MPI=
+    export WITH_MPI=""
 fi
 
 ./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI}
