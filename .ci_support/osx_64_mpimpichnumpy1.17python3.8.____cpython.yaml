@@ -31,9 +31,9 @@ liblapack:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 mpi:
-- nompi
+- mpich
 numpy:
-- '1.16'
+- '1.17'
 pin_run_as_build:
   python:
     min_pin: x.x
