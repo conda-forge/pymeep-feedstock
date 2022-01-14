@@ -16,7 +16,12 @@ else
     export WITH_MPI=""
 fi
 
-./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI} --disable-dependency-tracking
+# paranoia: sometimes autoconf doesn't get things right the first time
+autoreconf --verbose --install --symlink --force
+autoreconf --verbose --install --symlink --force
+autoreconf --verbose --install --symlink --force
+
+./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI}
 
 make -j ${CPU_COUNT}
 export OPENBLAS_NUM_THREADS=1
