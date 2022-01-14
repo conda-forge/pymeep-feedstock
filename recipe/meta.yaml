@@ -43,6 +43,7 @@ outputs:
       host:
         - autoconf
         - automake
+        - libtool
         - libblas
         - libcblas
         - liblapack
