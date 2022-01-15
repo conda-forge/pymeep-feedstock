@@ -41,9 +41,6 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
       host:
-        - autoconf
-        - automake
-        - libtool
         - libblas
         - libcblas
         - liblapack

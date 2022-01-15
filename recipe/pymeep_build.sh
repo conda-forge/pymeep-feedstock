@@ -16,12 +16,7 @@ else
     export WITH_MPI=""
 fi
 
-# paranoia: sometimes autoconf doesn't get things right the first time
-autoreconf --verbose --install --symlink --force
-autoreconf --verbose --install --symlink --force
-autoreconf --verbose --install --symlink --force
-
-./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI}
+./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI} || cat config.log
 
 make -j ${CPU_COUNT}
 export OPENBLAS_NUM_THREADS=1
