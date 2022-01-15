@@ -16,7 +16,7 @@ else
     export WITH_MPI=""
 fi
 
-./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI} || cat config.log
+./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI} MAKE="gmake" || cat config.log
 
 make -j ${CPU_COUNT}
 export OPENBLAS_NUM_THREADS=1
