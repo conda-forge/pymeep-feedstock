@@ -54,7 +54,7 @@ outputs:
         # We need to list hdf5 twice to get version pinning from
         # conda_build_config.yaml, (which falls back to the one from conda-forge,)
         # and build pinning from {{ mpi_prefix }}
-        - hdf5
+        # - hdf5
         - hdf5 * {{ mpi_prefix }}_*
         - fftw * {{ mpi_prefix }}_*
         - numpy
