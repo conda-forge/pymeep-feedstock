@@ -41,7 +41,7 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
       host:
-        - build-essential
+        - make
         - libblas
         - libcblas
         - liblapack
