@@ -17,6 +17,9 @@ jobs:
       osx_64_mpimpichnumpy1.19python3.9.____cpython:
         CONFIG: osx_64_mpimpichnumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_64_mpimpichnumpy1.21python3.10.____cpython:
+        CONFIG: osx_64_mpimpichnumpy1.21python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
       osx_64_mpinompinumpy1.18python3.7.____cpython:
         CONFIG: osx_64_mpinompinumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -25,6 +28,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_64_mpinompinumpy1.19python3.9.____cpython:
         CONFIG: osx_64_mpinompinumpy1.19python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_mpinompinumpy1.21python3.10.____cpython:
+        CONFIG: osx_64_mpinompinumpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
