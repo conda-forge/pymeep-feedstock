@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.21.0" %}
-{% set sha256 = "b9ec0646049d69f7335ebd15edf7b710e00dc4e7715989101debd75b49035401" %}
+{% set version = "1.22.0" %}
+{% set sha256 = "251d5cdf4b3b518b62828bb923b1b7a97d4bd620462457487e2b0cf3b8a51202" %}
 {% set buildnumber = 1 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
@@ -41,6 +41,7 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
       host:
+        - make
         - libblas
         - libcblas
         - liblapack
@@ -112,7 +113,7 @@ outputs:
         - scipy
         - ffmpeg
         - h5utils * {{ mpi_prefix }}_*
-        - mayavi
+        # - mayavi ##  disabled until conda-forge/mayavi-feedstock#56 is merged
     test:
       imports:
         - meep
