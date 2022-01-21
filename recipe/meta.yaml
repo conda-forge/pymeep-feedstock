@@ -113,7 +113,7 @@ outputs:
         - scipy
         - ffmpeg
         - h5utils * {{ mpi_prefix }}_*
-        - mayavi
+        # - mayavi ##  disabled until conda-forge/mayavi-feedstock#56 is merged
     test:
       imports:
         - meep
