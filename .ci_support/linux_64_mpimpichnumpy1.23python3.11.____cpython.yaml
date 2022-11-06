@@ -35,17 +35,15 @@ mpi:
 mpich:
 - '4'
 numpy:
-- '1.19'
+- '1.23'
 openmpi:
 - '4'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
-  zlib:
-    max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.11.* *_cpython
 python_impl:
 - cpython
 target_platform:
