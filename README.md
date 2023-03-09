@@ -1,11 +1,11 @@
-About pymeep
-============
+About pymeep-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymeep-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/NanoComp/meep
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymeep-feedstock/blob/main/LICENSE.txt)
 
 Summary: Free finite-difference time-domain (FDTD) software for electromagnetic simulations
 
