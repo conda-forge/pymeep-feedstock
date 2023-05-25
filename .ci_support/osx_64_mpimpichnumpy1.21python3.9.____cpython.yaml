@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '14'
+- '15'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,13 +11,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '14'
+- '15'
 ffmpeg:
-- '4.4'
+- '5'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '11'
+- '12'
 gsl:
 - '2.7'
 hdf5:
@@ -35,7 +35,7 @@ mpi:
 mpich:
 - '4'
 numpy:
-- '1.20'
+- '1.21'
 openmpi:
 - '4'
 pin_run_as_build:
@@ -43,7 +43,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.9.* *_cpython
 python_impl:
 - cpython
 target_platform:
