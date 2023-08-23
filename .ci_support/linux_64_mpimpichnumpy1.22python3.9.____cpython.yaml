@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 ffmpeg:
-- '5'
+- '6'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -23,7 +23,7 @@ fortran_compiler_version:
 gsl:
 - '2.7'
 hdf5:
-- 1.14.1
+- 1.14.2
 libblas:
 - 3.9 *netlib
 libcblas:
@@ -35,7 +35,7 @@ mpi:
 mpich:
 - '4'
 numpy:
-- '1.21'
+- '1.22'
 openmpi:
 - '4'
 pin_run_as_build:
