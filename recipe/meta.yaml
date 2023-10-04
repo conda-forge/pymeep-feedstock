@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.27.0" %}
 {% set sha256 = "759229b4499eba90b1c559f60a51ef4df5ea42533649159a3cd66c9f286bcdd6" %}
-{% set buildnumber = 1 %}
+{% set buildnumber = 2 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
 {% if mpi == "nompi" %}
@@ -79,6 +79,8 @@ outputs:
         - zlib
         - libopenblas
         - _openmp_mutex  # [linux]
+        - matplotlib-base
+        - scipy
     test:
       requires:
         - parallel
@@ -108,9 +110,7 @@ outputs:
       run:
         - {{ pin_subpackage("pymeep", exact=True) }}
         # Extras typically used at runtime
-        - matplotlib-base
         - autograd
-        - scipy
         - ffmpeg
         - h5utils * {{ mpi_prefix }}_*
         # - mayavi ##  disabled until conda-forge/mayavi-feedstock#56 is merged
@@ -129,6 +129,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - ChristopherHogan
     - oskooi
-    - RobinD42
+
