@@ -26,12 +26,12 @@ make install
 echo "SP_DIR=${SP_DIR}"
 find . -name _meep.a
 find ${SP_DIR} -name _meep.a
-ls -alhtr ${SP_DIR}/meep/
+ls -alhtr ${SP_DIR}
 
 echo "PREFIX=${PREFIX}"
 find . -name libmeep.a
 find ${PREFIX} -name libmeep.a
 ls -alhtr ${PREFIX}/lib/
 
-rm ${SP_DIR}/meep/_meep.a
+# rm ${SP_DIR}/meep/_meep.a
 rm ${PREFIX}/lib/libmeep.a
