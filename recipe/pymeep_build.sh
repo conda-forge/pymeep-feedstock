@@ -9,8 +9,6 @@ if [[ $(uname) == Darwin ]]; then
 fi
 
 if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
-    export CC="${PREFIX}/bin/mpicc"
-    export CXX="${PREFIX}/bin/mpic++"
     export WITH_MPI="--with-mpi"
 else
     export WITH_MPI=""
