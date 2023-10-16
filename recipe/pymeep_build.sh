@@ -23,5 +23,13 @@ export OPENBLAS_NUM_THREADS=1
 pushd tests && make -j ${CPU_COUNT} check && popd
 make install
 
+echo "SP_DIR=${SP_DIR}"
+ls -alhtr ${SP_DIR}/meep/_meep.a
+find . -name _meep.a
+
+echo "PREFIX=${PREFIX}"
+ls -alhtr ${PREFIX}/lib/libmeep.a
+find . -name libmeep.a
+
 rm ${SP_DIR}/meep/_meep.a
 rm ${PREFIX}/lib/libmeep.a
