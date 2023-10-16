@@ -24,12 +24,14 @@ pushd tests && make -j ${CPU_COUNT} check && popd
 make install
 
 echo "SP_DIR=${SP_DIR}"
-ls -alhtr ${SP_DIR}/meep/_meep.a
 find . -name _meep.a
+find ${SP_DIR} -name _meep.a
+ls -alhtr ${SP_DIR}/meep/
 
 echo "PREFIX=${PREFIX}"
-ls -alhtr ${PREFIX}/lib/libmeep.a
 find . -name libmeep.a
+find ${PREFIX} -name libmeep.a
+ls -alhtr ${PREFIX}/lib/
 
 rm ${SP_DIR}/meep/_meep.a
 rm ${PREFIX}/lib/libmeep.a
