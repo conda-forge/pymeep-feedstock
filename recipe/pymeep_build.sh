@@ -27,7 +27,12 @@ pushd tests && make -j ${CPU_COUNT} check && popd
 make install
 
 echo "SP_DIR=${SP_DIR}"
+find ${SP_DIR} -name _meep.a
+ls -alhtr ${SP_DIR}
 find . -name _meep.a
+
+
+export SP_DIR="/home/conda/feedstock_root/build_artifacts/pymeep_1697726182291/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac/lib"
 find ${SP_DIR} -name _meep.a
 ls -alhtr ${SP_DIR}
 
