@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Display commands being run.
+set -x
+
 export CPPFLAGS="-I${PREFIX}/include"
 
 if [[ $(uname) == Darwin ]]; then
@@ -23,5 +26,24 @@ export OPENBLAS_NUM_THREADS=1
 pushd tests && make -j ${CPU_COUNT} check && popd
 make install
 
-rm ${SP_DIR}/meep/_meep.a
+echo "SP_DIR=${SP_DIR}"
+find ${SP_DIR} -name _meep.a
+ls -alhtr ${SP_DIR}
+find . -name _meep.a
+
+
+export SP_DIR="/home/conda/feedstock_root/build_artifacts/pymeep_1697726182291/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac/lib"
+find ${SP_DIR} -name _meep.a
+ls -alhtr ${SP_DIR}
+
+echo "PREFIX=${PREFIX}"
+find . -name libmeep.a
+find ${PREFIX} -name libmeep.a
+ls -alhtr ${PREFIX}/lib/
+
+# rm ${SP_DIR}/meep/_meep.a
 rm ${PREFIX}/lib/libmeep.a
+
+python3 --version
+echo "PYTHONPATH=${PYTHONPATH}"
+python3 -c "import sys; print(sys.path)"
