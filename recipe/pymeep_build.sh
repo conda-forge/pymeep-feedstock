@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Display commands being run.
+set -x
+
 export CPPFLAGS="-I${PREFIX}/include"
 
 if [[ $(uname) == Darwin ]]; then
@@ -35,3 +38,7 @@ ls -alhtr ${PREFIX}/lib/
 
 # rm ${SP_DIR}/meep/_meep.a
 rm ${PREFIX}/lib/libmeep.a
+
+python3 --version
+echo "PYTHONPATH=${PYTHONPATH}"
+python3 -c "import sys; print(sys.path)"
