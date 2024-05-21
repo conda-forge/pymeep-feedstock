@@ -38,6 +38,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
       host:
@@ -74,7 +75,6 @@ outputs:
         - mpb >=1.11 {{ mpi_prefix }}_*
         - hdf5 * {{ mpi_prefix }}_*
         - fftw * {{ mpi_prefix }}_*
-        - {{ pin_compatible('numpy') }}
         - h5py * {{ mpi_prefix }}_*
         - zlib
         - libopenblas
