@@ -1,7 +1,7 @@
 {% set name = "pymeep" %}
 {% set version = "1.28.0" %}
 {% set sha256 = "1b9d603c94a55e5fb8370862060a302b267fb342b0fdaf12da8e11b36a122aa5" %}
-{% set buildnumber = 2 %}
+{% set buildnumber = 3 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
 {% if mpi == "nompi" %}
@@ -40,6 +40,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
+        - {{ stdlib("c") }}
       host:
         - make
         - libblas
