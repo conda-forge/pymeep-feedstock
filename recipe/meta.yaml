@@ -40,7 +40,6 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
-        - {{ stdlib("c") }}
       host:
         - make
         - libblas
