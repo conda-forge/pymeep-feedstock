@@ -5,34 +5,59 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-11
+    vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_mpimpichnumpy1.22python3.10.____cpython:
-        CONFIG: osx_64_mpimpichnumpy1.22python3.10.____cpython
+      osx_64_hdf51.14.3mpimpichnumpy1.22python3.8:
+        CONFIG: osx_64_hdf51.14.3mpimpichnumpy1.22python3.8
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichnumpy1.22python3.8.____cpython:
-        CONFIG: osx_64_mpimpichnumpy1.22python3.8.____cpython
+      osx_64_hdf51.14.3mpimpichnumpy1.22python3.9:
+        CONFIG: osx_64_hdf51.14.3mpimpichnumpy1.22python3.9
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichnumpy1.22python3.9.____cpython:
-        CONFIG: osx_64_mpimpichnumpy1.22python3.9.____cpython
+      osx_64_hdf51.14.3mpimpichnumpy1.23python3.10:
+        CONFIG: osx_64_hdf51.14.3mpimpichnumpy1.23python3.10
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichnumpy1.23python3.11.____cpython:
-        CONFIG: osx_64_mpimpichnumpy1.23python3.11.____cpython
+      osx_64_hdf51.14.3mpimpichnumpy1.26python3.11:
+        CONFIG: osx_64_hdf51.14.3mpimpichnumpy1.26python3.11
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.22python3.10.____cpython:
-        CONFIG: osx_64_mpinompinumpy1.22python3.10.____cpython
+      osx_64_hdf51.14.3mpinompinumpy1.22python3.8:
+        CONFIG: osx_64_hdf51.14.3mpinompinumpy1.22python3.8
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.22python3.8.____cpython:
-        CONFIG: osx_64_mpinompinumpy1.22python3.8.____cpython
+      osx_64_hdf51.14.3mpinompinumpy1.22python3.9:
+        CONFIG: osx_64_hdf51.14.3mpinompinumpy1.22python3.9
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.22python3.9.____cpython:
-        CONFIG: osx_64_mpinompinumpy1.22python3.9.____cpython
+      osx_64_hdf51.14.3mpinompinumpy1.23python3.10:
+        CONFIG: osx_64_hdf51.14.3mpinompinumpy1.23python3.10
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.23python3.11.____cpython:
-        CONFIG: osx_64_mpinompinumpy1.23python3.11.____cpython
+      osx_64_hdf51.14.3mpinompinumpy1.26python3.11:
+        CONFIG: osx_64_hdf51.14.3mpinompinumpy1.26python3.11
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpimpichnumpy1.22python3.8:
+        CONFIG: osx_64_hdf51.14.4mpimpichnumpy1.22python3.8
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpimpichnumpy1.22python3.9:
+        CONFIG: osx_64_hdf51.14.4mpimpichnumpy1.22python3.9
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpimpichnumpy1.23python3.10:
+        CONFIG: osx_64_hdf51.14.4mpimpichnumpy1.23python3.10
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpimpichnumpy1.26python3.11:
+        CONFIG: osx_64_hdf51.14.4mpimpichnumpy1.26python3.11
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpinompinumpy1.22python3.8:
+        CONFIG: osx_64_hdf51.14.4mpinompinumpy1.22python3.8
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpinompinumpy1.22python3.9:
+        CONFIG: osx_64_hdf51.14.4mpinompinumpy1.22python3.9
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpinompinumpy1.23python3.10:
+        CONFIG: osx_64_hdf51.14.4mpinompinumpy1.23python3.10
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.14.4mpinompinumpy1.26python3.11:
+        CONFIG: osx_64_hdf51.14.4mpinompinumpy1.26python3.11
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
+  variables: {}
 
   steps:
   # TODO: Fast finish on azure pipelines?
