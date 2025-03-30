@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.29.0" %}
-{% set sha256 = "68279f862cf9342a6e0f2023667d6a6ac7c1eafe46663705519772f312412194" %}
+{% set version = "1.30.0" %}
+{% set sha256 = "09e0d7ffd044b9c125561c650701780218791a57b5b2129b1527bcb0c0f3eb39" %}
 {% set buildnumber = 1 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
@@ -75,7 +75,7 @@ outputs:
         - mpb >=1.11 {{ mpi_prefix }}_*
         - hdf5 * {{ mpi_prefix }}_*
         - fftw * {{ mpi_prefix }}_*
-        - {{ pin_compatible('numpy') }}
+        - numpy
         - h5py * {{ mpi_prefix }}_*
         - zlib
         - libopenblas
