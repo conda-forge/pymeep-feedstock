@@ -1,6 +1,6 @@
 {% set name = "pymeep" %}
-{% set version = "1.29.0" %}
-{% set sha256 = "68279f862cf9342a6e0f2023667d6a6ac7c1eafe46663705519772f312412194" %}
+{% set version = "1.30.0" %}
+{% set sha256 = "09e0d7ffd044b9c125561c650701780218791a57b5b2129b1527bcb0c0f3eb39" %}
 {% set buildnumber = 1 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
@@ -43,9 +43,9 @@ outputs:
         - {{ stdlib("c") }}
       host:
         - make
-        - libblas
-        - libcblas
-        - liblapack
+        - libblas=*=*mkl
+        - libcblas=*=*mkl
+        - liblapack=*=*mkl
         - libgdsii >=0.21
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
@@ -63,9 +63,9 @@ outputs:
         - gsl
       run:
         # more or less a copy of the specs above
-        - libblas
-        - libcblas
-        - liblapack
+        - libblas=*=*mkl
+        - libcblas=*=*mkl
+        - liblapack=*=*mkl
         - libgdsii >=0.21
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
