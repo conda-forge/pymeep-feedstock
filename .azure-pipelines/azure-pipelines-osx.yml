@@ -8,29 +8,11 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_mpimpichnumpy1.22python3.8:
-        CONFIG: osx_64_mpimpichnumpy1.22python3.8
+      osx_64_mpimpich:
+        CONFIG: osx_64_mpimpich
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichnumpy1.22python3.9:
-        CONFIG: osx_64_mpimpichnumpy1.22python3.9
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichnumpy1.23python3.10:
-        CONFIG: osx_64_mpimpichnumpy1.23python3.10
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichnumpy1.26python3.11:
-        CONFIG: osx_64_mpimpichnumpy1.26python3.11
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.22python3.8:
-        CONFIG: osx_64_mpinompinumpy1.22python3.8
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.22python3.9:
-        CONFIG: osx_64_mpinompinumpy1.22python3.9
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.23python3.10:
-        CONFIG: osx_64_mpinompinumpy1.23python3.10
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpinompinumpy1.26python3.11:
-        CONFIG: osx_64_mpinompinumpy1.26python3.11
+      osx_64_mpinompi:
+        CONFIG: osx_64_mpinompi
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}
