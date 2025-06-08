@@ -39,8 +39,9 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
         - {{ stdlib('c') }}
-      host:
         - make
+      host:
+        - libzlib
         - libblas=*=*mkl
         - libcblas=*=*mkl
         - liblapack=*=*mkl
