@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -ex
 export CPPFLAGS="-I${PREFIX}/include"
 
 if [[ $(uname) == Darwin ]]; then
@@ -20,7 +20,9 @@ fi
 
 make -j ${CPU_COUNT}
 export OPENBLAS_NUM_THREADS=1
-pushd tests && make -j ${CPU_COUNT} check && popd
+pushd tests
+make -j ${CPU_COUNT} check
+popd
 make install
 
 rm -f ${SP_DIR}/meep/_meep.a
