@@ -28,5 +28,5 @@ make -j ${CPU_COUNT} check
 popd
 make install
 
-rm -f ${SP_DIR}/meep/_meep.a
-rm -f ${PREFIX}/lib/libmeep.a
+rm ${SP_DIR}/meep/_meep.a
+rm ${PREFIX}/lib/libmeep.a
