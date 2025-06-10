@@ -69,6 +69,7 @@ outputs:
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
         - python
+        - setuptools
         - libctl >=4.5.0
         - harminv >=1.4.1
         - mpb >=1.11 {{ mpi_prefix }}_*
