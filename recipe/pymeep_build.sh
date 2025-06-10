@@ -15,6 +15,10 @@ else
     export WITH_MPI=""
 fi
 
+# Fix compatibility with python 3.12
+# https://github.com/NanoComp/meep/pull/3028
+sed -i.bak "s|import distutils\.sysconfig; print *(distutils\.sysconfig\.get_python_inc())|import sysconfig; print(sysconfig.get_path('include'))|" configure
+
 ./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI} || cat config.log
 
 make -j ${CPU_COUNT}
