@@ -88,10 +88,13 @@ outputs:
         - autograd
         - scipy
         - ffmpeg
+        - pip
       imports:
         - meep
         - meep.mpb
-      script: pymeep_run_test.sh
+      commands: 
+        - pip check
+        - bash pymeep_run_test.sh
       source_files:
         - tests/cyl-ellipsoid-eps-ref.h5
         - python/tests/*.py
