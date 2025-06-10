@@ -1,6 +1,5 @@
 #!/bin/bash
 set -ex
-export CPPFLAGS="-I${PREFIX}/include"
 
 if [[ $(uname) == Darwin ]]; then
     # -dead_strip_dylibs causes the tests in make check to fail to find
