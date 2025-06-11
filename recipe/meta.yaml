@@ -90,6 +90,7 @@ outputs:
         - ffmpeg
         - nlopt
         - pip
+        - parameterized
       imports:
         - meep
         - meep.mpb
