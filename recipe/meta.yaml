@@ -12,7 +12,7 @@
 {% endif %}
 
 package:
-  name: pymeep
+  name: pymeep-split
   version: {{ version }}
 
 source:
