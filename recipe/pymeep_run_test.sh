@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pip check || exit 1
+
 if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
     for t in python/tests/*.py; do
         if [ "$(basename $t)" != "material_dispersion.py" -a "$(basename $t)" != "mpb.py" ]; then
