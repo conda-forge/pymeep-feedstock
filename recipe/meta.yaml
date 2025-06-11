@@ -92,9 +92,7 @@ outputs:
       imports:
         - meep
         - meep.mpb
-      commands: 
-        - pip check
-        - bash pymeep_run_test.sh
+      script: pymeep_run_test.sh
       source_files:
         - pymeep_run_test.sh
         - tests/cyl-ellipsoid-eps-ref.h5
