@@ -42,9 +42,9 @@ outputs:
         - make
       host:
         - libzlib
-        - libblas=*=*mkl
-        - libcblas=*=*mkl
-        - liblapack=*=*mkl
+        - libblas
+        - libcblas
+        - liblapack
         - libgdsii >=0.21
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
@@ -62,9 +62,9 @@ outputs:
         - gsl
       run:
         # more or less a copy of the specs above
-        - libblas=*=*mkl
-        - libcblas=*=*mkl
-        - liblapack=*=*mkl
+        - libblas
+        - libcblas
+        - liblapack
         - libgdsii >=0.21
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
