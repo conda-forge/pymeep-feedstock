@@ -1,29 +1,27 @@
 {% set name = "pymeep" %}
 {% set version = "1.30.1" %}
-{% set sha256 = "4089bdfbda5acb51d1bcc7864d580121ef2648592611a59bebce807de26900c1" %}
-{% set buildnumber = 1 %}
+{% set build = 2 %}
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
 {% if mpi == "nompi" %}
 # prioritize nompi via build number
-{% set buildnumber = buildnumber + 100 %}
+{% set build = build + 100 %}
 {% set mpi_prefix = "nompi" %}
 {% else %}
 {% set mpi_prefix = "mpi_" + mpi %}
 {% endif %}
 
 package:
-  name: pymeep
+  name: pymeep-split
   version: {{ version }}
 
 source:
-  fn: meep-{{ version }}.tar.gz
   url: https://github.com/NanoComp/meep/releases/download/v{{ version }}/meep-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 4089bdfbda5acb51d1bcc7864d580121ef2648592611a59bebce807de26900c1
 
 build:
-  number: {{ buildnumber }}
-  skip: true  # [win or py<36 or python_impl == "pypy"]
+  number: {{ build }}
+  skip: true  # [win]
 
 outputs:
   # Define the base package for pymeep.
@@ -34,18 +32,19 @@ outputs:
     #     `pymeep * nompi_*` for no mpi
     script: pymeep_build.sh
     build:
-      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
-        - {{ stdlib("c") }}
-      host:
+        - {{ stdlib('c') }}
         - make
-        - libblas=*=*mkl
-        - libcblas=*=*mkl
-        - liblapack=*=*mkl
+      host:
+        - libzlib
+        - libblas
+        - libcblas
+        - liblapack
         - libgdsii >=0.21
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
@@ -63,19 +62,19 @@ outputs:
         - gsl
       run:
         # more or less a copy of the specs above
-        - libblas=*=*mkl
-        - libcblas=*=*mkl
-        - liblapack=*=*mkl
+        - libblas
+        - libcblas
+        - liblapack
         - libgdsii >=0.21
         - {{ mpi }}  # [mpi != 'nompi']
         - mpi4py >=3.0  # [mpi != 'nompi']
         - python
+        - setuptools
         - libctl >=4.5.0
         - harminv >=1.4.1
         - mpb >=1.11 {{ mpi_prefix }}_*
         - hdf5 * {{ mpi_prefix }}_*
         - fftw * {{ mpi_prefix }}_*
-        - {{ pin_compatible('numpy') }}
         - h5py * {{ mpi_prefix }}_*
         - zlib
         - libopenblas
@@ -89,11 +88,15 @@ outputs:
         - autograd
         - scipy
         - ffmpeg
+        - nlopt
+        - pip
+        - parameterized
       imports:
         - meep
         - meep.mpb
       script: pymeep_run_test.sh
       source_files:
+        - pymeep_run_test.sh
         - tests/cyl-ellipsoid-eps-ref.h5
         - python/tests/*.py
         - python/tests/data/*
@@ -106,7 +109,7 @@ outputs:
     #     `pymeep * mpi_*` for any mpi
     #     `pymeep * nompi_*` for no mpi
     build:
-      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ buildnumber }}
+      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
     requirements:
       run:
         - {{ pin_subpackage("pymeep", exact=True) }}
