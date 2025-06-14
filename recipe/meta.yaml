@@ -35,6 +35,9 @@ outputs:
       string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
     requirements:
       build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - numpy                                  # [build_platform != target_platform]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
