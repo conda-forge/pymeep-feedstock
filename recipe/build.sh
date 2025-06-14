@@ -1,12 +1,6 @@
 #!/bin/bash
 set -ex
 
-if [[ $(uname) == Darwin ]]; then
-    # -dead_strip_dylibs causes the tests in make check to fail to find
-    # the default_material global variable in libctlgeom (from libctl)
-    export LDFLAGS="${LDFLAGS/-Wl,-dead_strip_dylibs/}"
-fi
-
 if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
     export CC="${PREFIX}/bin/mpicc"
     export CXX="${PREFIX}/bin/mpic++"
@@ -22,10 +16,14 @@ sed -i.bak "s|import distutils\.sysconfig; print *(distutils\.sysconfig\.get_pyt
 ./configure --prefix="${PREFIX}" --with-libctl=no ${WITH_MPI} || cat config.log
 
 make -j ${CPU_COUNT}
-export OPENBLAS_NUM_THREADS=1
-pushd tests
-make -j ${CPU_COUNT} check
-popd
+
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+    # Only run tests if we are natively compiling or if we have an emulator
+    # for example osx-arm64 cannot be emulated on osx-x86_64bit
+    pushd tests
+    OPENBLAS_NUM_THREADS=1 make -j ${CPU_COUNT} check
+    popd
+fi
 make install
 
 rm ${SP_DIR}/meep/_meep.a
