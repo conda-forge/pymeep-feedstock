@@ -1,6 +1,6 @@
-{% set name = "pymeep" %}
 {% set version = "1.30.1" %}
-{% set build = 3 %}
+{% set build = 4 %}
+
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or "nompi" %}
 {% if mpi == "nompi" %}
@@ -12,7 +12,7 @@
 {% endif %}
 
 package:
-  name: pymeep-split
+  name: pymeep
   version: {{ version }}
 
 source:
@@ -22,106 +22,78 @@ source:
 build:
   number: {{ build }}
   skip: true  # [win]
+  # Add build string so packages can depend on mpi or nompi variants of dependencies:
+  #     `pymeep * mpi_mpich_*` for mpich
+  #     `pymeep * mpi_*` for any mpi
+  #     `pymeep * nompi_*` for no mpi
+  build:
+    string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
 
-outputs:
-  # Define the base package for pymeep.
-  - name: pymeep
-    # Add build string so packages can depend on mpi or nompi variants of dependencies:
-    #     `pymeep * mpi_mpich_*` for mpich
-    #     `pymeep * mpi_*` for any mpi
-    #     `pymeep * nompi_*` for no mpi
-    script: pymeep_build.sh
-    build:
-      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
-    requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
-        - {{ stdlib('c') }}
-        - make
-      host:
-        - libzlib
-        - libblas
-        - libcblas
-        - liblapack
-        - libgdsii >=0.21
-        - {{ mpi }}  # [mpi != 'nompi']
-        - mpi4py >=3.0  # [mpi != 'nompi']
-        - python
-        - libctl >=4.5.0
-        - harminv >=1.4.1
-        - mpb >=1.11 {{ mpi_prefix }}_*
-        # We need to list hdf5 twice to get version pinning from
-        # conda_build_config.yaml, (which falls back to the one from conda-forge,)
-        # and build pinning from {{ mpi_prefix }}
-        - hdf5
-        - hdf5 * {{ mpi_prefix }}_*
-        - fftw * {{ mpi_prefix }}_*
-        - numpy
-        - gsl
-      run:
-        # more or less a copy of the specs above
-        - libblas
-        - libcblas
-        - liblapack
-        - libgdsii >=0.21
-        - {{ mpi }}  # [mpi != 'nompi']
-        - mpi4py >=3.0  # [mpi != 'nompi']
-        - python
-        - setuptools
-        - libctl >=4.5.0
-        - harminv >=1.4.1
-        - mpb >=1.11 {{ mpi_prefix }}_*
-        - hdf5 * {{ mpi_prefix }}_*
-        - fftw * {{ mpi_prefix }}_*
-        - h5py * {{ mpi_prefix }}_*
-        - zlib
-        - libopenblas
-        - _openmp_mutex  # [linux]
-        - matplotlib-base
-        - scipy
-    test:
-      requires:
-        - parallel
-        - matplotlib-base
-        - autograd
-        - scipy
-        - ffmpeg
-        - nlopt
-        - pip
-        - parameterized
-      imports:
-        - meep
-        - meep.mpb
-      script: pymeep_run_test.sh
-      source_files:
-        - pymeep_run_test.sh
-        - tests/cyl-ellipsoid-eps-ref.h5
-        - python/tests/*.py
-        - python/tests/data/*
-
-  # Define a metapackage with extras needed for the tutorials/tests.
-  - name: pymeep-extras
-    # add build string so packages can depend on mpi or nompi variants
-    # dependencies:
-    #     `pymeep * mpi_mpich_*` for mpich
-    #     `pymeep * mpi_*` for any mpi
-    #     `pymeep * nompi_*` for no mpi
-    build:
-      string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
-    requirements:
-      run:
-        - {{ pin_subpackage("pymeep", exact=True) }}
-        # Extras typically used at runtime
-        - autograd
-        - ffmpeg
-        - h5utils * {{ mpi_prefix }}_*
-        # - mayavi ##  disabled until conda-forge/mayavi-feedstock#56 is merged
-    test:
-      imports:
-        - meep
-        - meep.mpb
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+    - {{ stdlib('c') }}
+    - make
+  host:
+    - libzlib
+    - libblas
+    - libcblas
+    - liblapack
+    - libgdsii >=0.21
+    - {{ mpi }}  # [mpi != 'nompi']
+    - mpi4py >=3.0  # [mpi != 'nompi']
+    - python
+    - libctl >=4.5.0
+    - harminv >=1.4.1
+    - mpb >=1.11 {{ mpi_prefix }}_*
+    # We need to list hdf5 twice to get version pinning from
+    # conda_build_config.yaml, (which falls back to the one from conda-forge,)
+    # and build pinning from {{ mpi_prefix }}
+    - hdf5
+    - hdf5 * {{ mpi_prefix }}_*
+    - fftw * {{ mpi_prefix }}_*
+    - numpy
+    - gsl
+  run:
+    # more or less a copy of the specs above
+    - libblas
+    - libcblas
+    - liblapack
+    - libgdsii >=0.21
+    - {{ mpi }}  # [mpi != 'nompi']
+    - mpi4py >=3.0  # [mpi != 'nompi']
+    - python
+    - setuptools
+    - libctl >=4.5.0
+    - harminv >=1.4.1
+    - mpb >=1.11 {{ mpi_prefix }}_*
+    - hdf5 * {{ mpi_prefix }}_*
+    - fftw * {{ mpi_prefix }}_*
+    - h5py * {{ mpi_prefix }}_*
+    - zlib
+    - libopenblas
+    - _openmp_mutex  # [linux]
+    - matplotlib-base
+    - scipy
+test:
+  requires:
+    - parallel
+    - matplotlib-base
+    - autograd
+    - scipy
+    - ffmpeg
+    - nlopt
+    - pip
+    - parameterized
+  imports:
+    - meep
+    - meep.mpb
+  source_files:
+    - tests/cyl-ellipsoid-eps-ref.h5
+    - python/tests/*.py
+    - python/tests/data/*
 
 about:
   home: https://github.com/NanoComp/meep

@@ -1,6 +1,6 @@
 #!/bin/bash
-
-pip check || exit 1
+set -ex
+pip check
 
 if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
     for t in python/tests/*.py; do
