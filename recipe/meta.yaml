@@ -84,20 +84,18 @@ requirements:
 test:
   requires:
     - parallel
-    - matplotlib-base
-    - autograd
-    - scipy
-    - ffmpeg
-    - nlopt
-    - pip
     - parameterized
+    - pip
   imports:
     - meep
     - meep.mpb
   source_files:
     - tests/cyl-ellipsoid-eps-ref.h5
-    - python/tests/*.py
     - python/tests/data/*
+    - python/tests/test_antenna_radiation.py
+    - python/tests/test_bend_flux.py
+    - python/tests/test_binary_grating.py
+    - python/tests/test_simulation.py
 
 about:
   home: https://github.com/NanoComp/meep
