@@ -96,6 +96,7 @@ test:
     - python/tests/test_bend_flux.py
     - python/tests/test_binary_grating.py
     - python/tests/test_simulation.py
+    - python/tests/utils.py
 
 about:
   home: https://github.com/NanoComp/meep
