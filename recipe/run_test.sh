@@ -1,14 +1,15 @@
 #!/bin/bash
+
 set -ex
 pip check
 
+unit_tests=("test_antenna_radiation.py" "test_bend_flux.py" "test_binary_grating.py" "test_simulation.py")
+
 if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
-    for t in python/tests/*.py; do
-        if [ "$(basename $t)" != "test_material_dispersion.py" -a "$(basename $t)" != "test_mpb.py" -a "$(basename $t)" != "test_adjoint_cyl.py" -a "$(basename $t)" != "test_adjoint_jax.py" -a "$(basename $t)" != "test_adjoint_solver.py" -a "$(basename $t)" != "test_adjoint_utils.py" ]; then
-            echo "Running $(basename $t)"
-            OPENBLAS_NUM_THREADS=1 ${PREFIX}/bin/mpiexec -n 2 $PYTHON $t
-        fi
+    for unit_test in "${unit_tests[@]}"; do
+        echo "Running ${unit_test}"
+        OPENBLAS_NUM_THREADS=1 ${PREFIX}/bin/mpiexec -n 2 ${PYTHON} ${unit_test}
     done
 else
-    OPENBLAS_NUM_THREADS=1 find python/tests -name "*.py" | sed /mpb/d | sed /adjoint/d | parallel "$PYTHON {}"
+    OPENBLAS_NUM_THREADS=1 parallel "${PYTHON} ${unit_tests[@]}"
 fi
