@@ -11,5 +11,5 @@ if [[ ! -z "$mpi" && "$mpi" != "nompi" ]]; then
         OPENBLAS_NUM_THREADS=1 ${PREFIX}/bin/mpiexec -n 2 ${PYTHON} ${unit_test}
     done
 else
-    OPENBLAS_NUM_THREADS=1 parallel "${PYTHON} ${unit_tests[@]}"
+    OPENBLAS_NUM_THREADS=1 parallel ${PYTHON} {} ::: "${unit_tests[@]}"
 fi
