@@ -32,7 +32,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
     - {{ stdlib('c') }}
     - make                                   # [unix]
     - pkg-config
