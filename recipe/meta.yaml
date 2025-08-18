@@ -48,7 +48,7 @@ requirements:
     - {{ mpi }}  # [mpi != 'nompi']
     - mpi4py >=3.0  # [mpi != 'nompi']
     - python
-    - libctl >=4.5.0
+    - libctl >=4.5.1
     - harminv >=1.4.2
     - mpb >=1.12
     # We need to list hdf5 twice to get version pinning from
@@ -70,7 +70,7 @@ requirements:
     - mpi4py >=3.0  # [mpi != 'nompi']
     - python
     - setuptools
-    - libctl >=4.5.0
+    - libctl >=4.5.1
     - harminv >=1.4.2
     - mpb >=1.12
     - hdf5 * {{ mpi_prefix }}_*
