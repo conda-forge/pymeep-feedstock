@@ -17,7 +17,7 @@ package:
 
 source:
   url: https://github.com/NanoComp/meep/releases/download/v{{ version }}/meep-{{ version }}.tar.gz
-  sha256: 6f9eec56f380a07ef4d15c3b0a8368284fe876b6f3d9418253485f18364fe3e1
+  sha256: 446c589a1b4bc979d0b09f94817298fe0b39f8a0c9f8850ce1f39e1b0c51675b
 
 build:
   number: {{ build }}
