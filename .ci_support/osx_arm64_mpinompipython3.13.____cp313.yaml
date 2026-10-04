@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '19'
+- '21'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -17,13 +17,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '19'
+- '21'
 fftw:
 - '3'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '14'
+- '15'
 gsl:
 - '2.8'
 hdf5:
@@ -43,7 +43,7 @@ mpich:
 numpy:
 - '2'
 openmpi:
-- '4'
+- '5'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -56,3 +56,5 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
+- - python
+  - channel_sources
