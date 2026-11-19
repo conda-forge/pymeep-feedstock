@@ -1,4 +1,4 @@
-{% set version = "1.35.1" %}
+{% set version = "1.36.0" %}
 {% set build = 0 %}
 
 # recipe-lint fails if mpi is undefined
@@ -17,7 +17,7 @@ package:
 
 source:
   url: https://github.com/NanoComp/meep/releases/download/v{{ version }}/meep-{{ version }}.tar.gz
-  sha256: 4a6a026ed0650b3f3b4f9b2169e86cb2f537b09e79657b17e52b6ab018eca0ad
+  sha256: e22c293449c78eb6471e61f1ee5701b534a4fcfa801ca9556be9331952e46eea
 
 build:
   number: {{ build }}
